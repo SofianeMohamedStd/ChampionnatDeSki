@@ -1,0 +1,33 @@
+<?php
+
+namespace App\Entites;
+
+use Exception;
+
+class Profil
+{
+    private int $id;
+    private string $NomProfil;
+
+    public function getId(): int 
+    {
+        return $this->id;
+    }
+
+    public function getNomProfil(): String
+    {
+        return $this->NomProfil;
+    }
+
+    public function SetNomProfil(string $NomProfil)
+    {
+        if(! preg_match(",^[a-zA-Z0-9[\].-:]+$,", $NomProfil))
+        {
+            throw new Exception('verifier le nom');
+        }
+        $this->NomProfil = $NomProfil;
+
+    }
+
+   
+}
