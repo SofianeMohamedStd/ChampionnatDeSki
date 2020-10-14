@@ -1,5 +1,5 @@
 <?php
-namespace Unity\Tests;
+namespace Unity\TestsEntites\Tests;
 
 use Exception;
 
