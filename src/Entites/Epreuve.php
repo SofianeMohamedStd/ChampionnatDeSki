@@ -47,7 +47,7 @@ class Epreuve
      */
     public function SetLieu(string $Lieu)
     {
-        if(! preg_match('#[0-9]+ rue de [a-z]+ [a-z]+ [0-9]{5}#i', $Lieu))
+        if(! preg_match("/^[a-z]* [0-9]{5}$/", $Lieu))
         {
             throw new Exception('Lieu invalide');
         }
@@ -68,7 +68,7 @@ class Epreuve
      */
     public function SetDate(String $Date)
     {
-        if (! preg_match('^(((0[1-9])|(1\d)|(2\d)|(3[0-1]))\/((0[1-9])|(1[0-2]))\/(\d{4}))$',$Date))
+        if (! preg_match("/^(((0[1-9])|(1\d)|(2\d)|(3[0-1]))\/((0[1-9])|(1[0-2]))\/(\d{4}))$/",$Date))
         {
             throw new Exception('date invalide');
         }

@@ -35,7 +35,7 @@ class Categorie
      * @param string $NomCategorie
      * @throws Exception
      */
-    public function SetNomCategorie(string $NomCategorie)
+    public function SetNomCategorie(String $NomCategorie)
     {
         if(! preg_match(",^[a-zA-Z0-9[\].-]+$,", $NomCategorie))
         {
