@@ -15,7 +15,6 @@ class Categorie
      * @var string
      */
     private string $NomCategorie;
-
     /**
      * @return int
      */
