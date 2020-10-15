@@ -36,6 +36,8 @@ it('has function Existe',function(){
     });
 
     it('test Set NomCategorie', function($name){
+        $res = $this->categorie->SetNomCategorie($name);
+        $this->expect($res->getNomCategorie())->toBeString();
         $this->assertMatchesRegularExpression(",^[a-zA-Z0-9[\].-]+$,",$name);
         })->with('Categorie');
         

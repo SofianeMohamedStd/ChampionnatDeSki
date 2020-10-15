@@ -35,13 +35,15 @@ class Categorie
      * @param string $NomCategorie
      * @throws Exception
      */
-    public function SetNomCategorie(String $NomCategorie)
+    public function SetNomCategorie(String $NomCategorie):self
     {
         if(! preg_match(",^[a-zA-Z0-9[\].-]+$,", $NomCategorie))
         {
             throw new Exception('verifier le nom');
+        }else{
+           $this->NomCategorie = $NomCategorie; 
         }
-        $this->NomCategorie = $NomCategorie;
+        return $this;
 
         
     }

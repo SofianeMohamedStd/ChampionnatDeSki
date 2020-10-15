@@ -45,13 +45,15 @@ class Epreuve
      * @return void
      * @throws Exception
      */
-    public function SetLieu(string $Lieu)
+    public function SetLieu(string $Lieu):self
     {
         if(! preg_match("/^[a-z]* [0-9]{5}$/", $Lieu))
         {
             throw new Exception('Lieu invalide');
-        }
+        }else{
         $this->Lieu = $Lieu;
+        }
+        return $this;
     }
 
     /**
@@ -66,13 +68,15 @@ class Epreuve
      * @param String $Date
      * @throws Exception
      */
-    public function SetDate(String $Date)
+    public function SetDate(String $Date):self
     {
         if (! preg_match("/^(((0[1-9])|(1\d)|(2\d)|(3[0-1]))\/((0[1-9])|(1[0-2]))\/(\d{4}))$/",$Date))
         {
             throw new Exception('date invalide');
-        }
+        }else {
         $dateL = DateTime::createFromFormat('d/m/Y', $Date);
         $this->Date = $dateL;
+        }
+        return $this;
     }
 }

@@ -1,8 +1,9 @@
 <?php
 namespace Unity\TestsEntites\Tests;
 
-use Exception;
+use DateTime;
 
+use Exception;
 use App\Entites\Participant;
 use PHPUnit\Framework\TestCase;
 
@@ -43,17 +44,32 @@ it('has function Existe',function(){
     });
 
 it('test Set Nom', function($name){
+        $res = $this->participant->SetNom($name);
+        $this->expect($res->getNom())->toBeString();
     $this->assertMatchesRegularExpression("/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/",$name);
     })->with('Nom');
 
-it("Test Exception Set Nom",function($name) {
+/*it("Test Exception Set Nom",function($name) {
         $this->participant->SetNom($name);
-    })->with('NomEx')->throws(Exception::class);
+    })->with('NomEx')->throws(Exception::class);*/
+
+    it('should SetNom return String', function(){
+        $this->participant->SetNom('sofiane');
+        $this->expect($this->participant->getNom())->toBeString();
+    });
+
 
 it('test Set Prenom', function($prenom){
+        $res = $this->participant->SetPrenom($prenom);
+        $this->expect($res->getPrenom())->toBeString();
     $this->assertMatchesRegularExpression("/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/",$prenom);
     })->with('Nom');
-    
+
+    it('should SetPrenom return String', function(){
+        $this->participant->SetPrenom('sofiane');
+        $this->expect($this->participant->getPrenom())->toBeString();
+    });
+
 it("Test Exception Set Prenom",function($prenom) {
     $this->participant->SetNom($prenom);
     })->with('NomEx')->throws(Exception::class);
@@ -61,6 +77,11 @@ it("Test Exception Set Prenom",function($prenom) {
 it('test Set Email', function($email){
         $this->assertMatchesRegularExpression("/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/",$email);
         })->with('Email');
+
+it('should SetEmail return String', function(){
+        $this->participant->SetEmail('sofiane@gmail.com');
+        $this->expect($this->participant->getEmail())->toBeString();
+            });
         
 it("Test Exception Set Email",function($email) {
         $this->participant->SetNom($email);
@@ -75,16 +96,29 @@ it("Test Exception Set Categorie",function($categorie) {
         $this->participant->SetCategorieID($categorie);
         })->with('CategrieExId')->throws(Exception::class);
 
+it('should SetCategorieID return String', function(){
+        $this->participant->SetCategorieID(1);
+        $this->expect($this->participant->getCategorieID())->toBeInt();
+        });
+
 it('test Set Profil', function($profil){
         $this->expect($profil)->toBeInt();
         $this->expect($profil)->toBeGreaterThan(0);
         })->with('CategorieId');
-                
+
+it('should SetProfilID return String', function(){
+        $this->participant->SetProfilID(1);
+        $this->expect($this->participant->getProfilID())->toBeInt();
+        });
+
 it("Test Exception Set Profil",function($profil) {
         $this->participant->SetProfilID($profil);
         })->with('CategrieExId')->throws(Exception::class);
 
 it('test Set Date',function($Date) {
+        $timeStage = DateTime::createFromFormat('d/m/Y', $Date);
+        $result = $this->participant->SetDateNaissance($Date);
+        $this->expect($result->getDateNaissance())->toEqual($timeStage);
         $this->assertMatchesRegularExpression("/^(((0[1-9])|(1\d)|(2\d)|(3[0-1]))\/((0[1-9])|(1[0-2]))\/(\d{4}))$/",$Date);
         })->with('Date');
         
@@ -92,10 +126,13 @@ it('test Exception Set date',function($Date) {
         $this->participant->SetDateNaissance($Date);
         })->with('DateEx')->throws(Exception::class);
 
-        it('test Set Photo',function($Photo) {
-            $this->assertMatchesRegularExpression("/.*\.(gif|jpe?g|bmp|png)$/",$Photo);
-            })->with('Photo');
-            
+it('test Set Photo',function($Photo) {
+        $this->assertMatchesRegularExpression("/.*\.(gif|jpe?g|bmp|png)$/",$Photo);
+        })->with('Photo');
+it('should SetPhoto return String', function(){
+        $this->participant->SetPhoto('img.png');
+        $this->expect($this->participant->getPhoto())->toBeString();
+        });
     it('test Exception Set Photo',function($Photo) {
             $this->participant->SetPhoto($Photo);
             })->with('PhotoEx')->throws(Exception::class);
