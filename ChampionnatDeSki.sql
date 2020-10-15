@@ -53,10 +53,10 @@ CREATE TABLE `passage_participants` (
   `passage_id` int(11) NOT NULL,
   `participants_id` int(11) NOT NULL,
   PRIMARY KEY (`passage_id`,`participants_id`),
-  CONSTRAINT fk_passage_id          -- On donne un nom à notre clé
-        FOREIGN KEY (passage_id)             -- Colonne sur laquelle on crée la clé
-        REFERENCES Passage(id),        -- Colonne de référence
-  CONSTRAINT fk_participants_id_id          -- On donne un nom à notre clé
-        FOREIGN KEY (participants_id)             -- Colonne sur laquelle on crée la clé
-        REFERENCES Participants(id)        -- Colonne de référence
+  CONSTRAINT fk_passage_id          
+        FOREIGN KEY (passage_id)             
+        REFERENCES Passage(id),        
+  CONSTRAINT fk_participants_id_id          
+        FOREIGN KEY (participants_id)             
+        REFERENCES Participants(id)       
 ) ENGINE=InnoDB;
