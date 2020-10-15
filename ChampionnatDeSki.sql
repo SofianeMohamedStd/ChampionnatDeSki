@@ -45,13 +45,13 @@ CREATE TABLE `epreuves_participants` (
 
 CREATE TABLE `passage` (
   `id` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
-  `num_passage` int(11) NOT NULL
+  `num_passage` int(11) NOT NULL,
+  `temps` time
 ) ENGINE=InnoDB;
 
 CREATE TABLE `passage_participants` (
   `passage_id` int(11) NOT NULL,
   `participants_id` int(11) NOT NULL,
-  `temps` time NOT NULL,
   PRIMARY KEY (`passage_id`,`participants_id`),
   CONSTRAINT fk_passage_id          -- On donne un nom à notre clé
         FOREIGN KEY (passage_id)             -- Colonne sur laquelle on crée la clé
