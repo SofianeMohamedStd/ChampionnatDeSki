@@ -9,6 +9,7 @@ use PHPUnit\Framework\TestCase;
 beforeEach(function () {
     $this->profil = new Profil();
 });
+
 dataset('Profil', ['senior', 'M1','M1n']);
 dataset('ProfilEx', ['M1 n','M1_']);
 

@@ -49,15 +49,10 @@ it('test Set Nom', function($name){
     $this->assertMatchesRegularExpression("/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/",$name);
     })->with('Nom');
 
-/*it("Test Exception Set Nom",function($name) {
-        $this->participant->SetNom($name);
-    })->with('NomEx')->throws(Exception::class);*/
-
     it('should SetNom return String', function(){
         $this->participant->SetNom('sofiane');
         $this->expect($this->participant->getNom())->toBeString();
     });
-
 
 it('test Set Prenom', function($prenom){
         $res = $this->participant->SetPrenom($prenom);
@@ -129,11 +124,13 @@ it('test Exception Set date',function($Date) {
 it('test Set Photo',function($Photo) {
         $this->assertMatchesRegularExpression("/.*\.(gif|jpe?g|bmp|png)$/",$Photo);
         })->with('Photo');
+
 it('should SetPhoto return String', function(){
         $this->participant->SetPhoto('img.png');
         $this->expect($this->participant->getPhoto())->toBeString();
         });
-    it('test Exception Set Photo',function($Photo) {
-            $this->participant->SetPhoto($Photo);
-            })->with('PhotoEx')->throws(Exception::class);
+
+it('test Exception Set Photo',function($Photo) {
+        $this->participant->SetPhoto($Photo);
+        })->with('PhotoEx')->throws(Exception::class);
 
