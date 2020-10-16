@@ -23,27 +23,27 @@ it('has function Existe',function(){
     $this->expect(method_exists ($this->categorie,'getNomCategorie'))->toBeTrue();
     $this->expect(method_exists ($this->categorie,'getId'))->toBeTrue();
     });
-    it('return', function($id){
-        $stub = $this->createStub(Categorie::class);
-            $stub->method('getId')
-                 ->willReturn($id);
-            $this->assertSame($id, $stub->getId());
+it('return', function($id){
+    $stub = $this->createStub(Categorie::class);
+    $stub->method('getId')
+    ->willReturn($id);
+    $this->assertSame($id, $stub->getId());
     })->with('ListId');
 
-    it('should getNomString return String', function(){
-        $this->categorie->SetNomCategorie('Sofiane');
-        $this->expect($this->categorie->getNomCategorie())->toBeString();
+it('should getNomString return String', function(){
+    $this->categorie->SetNomCategorie('Sofiane');
+    $this->expect($this->categorie->getNomCategorie())->toBeString();
     });
 
-    it('test Set NomCategorie', function($name){
-        $res = $this->categorie->SetNomCategorie($name);
-        $this->expect($res->getNomCategorie())->toBeString();
-        $this->assertMatchesRegularExpression(",^[a-zA-Z0-9[\].-]+$,",$name);
-        })->with('Categorie');
+it('test Set NomCategorie', function($name){
+    $res = $this->categorie->SetNomCategorie($name);
+    $this->expect($res->getNomCategorie())->toBeString();
+    $this->assertMatchesRegularExpression(",^[a-zA-Z0-9[\].-]+$,",$name);
+    })->with('Categorie');
         
-        it("Test Exception Set NomCategorie",function($name) {
-            $this->categorie->SetNomCategorie($name);
-        })->with('CategorieEx')->throws(Exception::class);
+it("Test Exception Set NomCategorie",function($name) {
+    $this->categorie->SetNomCategorie($name);
+    })->with('CategorieEx')->throws(Exception::class);
 
 
 
