@@ -11,6 +11,4 @@ jobs:
       - uses: php-actions/composer@v1
       - name: Run phpunit
         run: ./vendor/bin/pest
-        with:
-          configuration: phpunit.xml
-          args: --coverage-text
+       
