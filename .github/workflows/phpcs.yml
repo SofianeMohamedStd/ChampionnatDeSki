@@ -1,3 +1,4 @@
+on: push
 phpcs PSR12:
   stage: linting
   image: pipelinecomponents/php-codesniffer:latest
