@@ -2,7 +2,7 @@ phpcs PSR12:
   stage: linting
   image: pipelinecomponents/php-codesniffer:latest
   script:
-    - phpcs -s -p --colors --extensions=php --standard=PSR2 .
+    - phpcs -s -p --colors --extensions=php --standard=PSR12 .
 php-compatibility 7.4:
   stage: test
   image: pipelinecomponents/php-codesniffer:latest
