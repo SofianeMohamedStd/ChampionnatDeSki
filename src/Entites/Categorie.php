@@ -19,7 +19,7 @@ class Categorie
     /**
      * @return int
      */
-    public function getId () : int
+    public function getId(): int
     {
         return $this -> id;
     }
@@ -27,7 +27,7 @@ class Categorie
     /**
      * @return String
      */
-    public function getNomCategorie () : string
+    public function getNomCategorie(): string
     {
         return $this -> NomCategorie;
     }
@@ -37,17 +37,13 @@ class Categorie
      * @return Categorie
      * @throws Exception
      */
-    public function SetNomCategorie ( string $NomCategorie ) : self
+    public function setNomCategorie(string $NomCategorie): self
     {
-        if ( ! preg_match ( ",^[a-zA-Z0-9[\].-]+$," , $NomCategorie ) ) {
-            throw new Exception( 'verifier le nom' );
+        if (! preg_match(",^[a-zA-Z0-9[\].-]+$,", $NomCategorie)) {
+            throw new Exception('verifier le nom');
         } else {
             $this -> NomCategorie = $NomCategorie;
         }
         return $this;
-
-
     }
-
-
 }

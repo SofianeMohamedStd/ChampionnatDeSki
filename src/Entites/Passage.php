@@ -24,21 +24,20 @@ class Passage
     private DateTimeInterface $TempDePassage;
 
 
-    public function getId():int
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function getNumPassage():int
+    public function getNumPassage(): int
     {
         return $this->NumPassage;
     }
-    public function SetNumPassage($NumPassage): self
+    public function setNumPassage($NumPassage): self
     {
-        if(! is_int($numPassage) || $NumPassage <=0 || $numPassage > 2){
-
+        if (! is_int($numPassage) || $NumPassage <= 0 || $numPassage > 2) {
             throw new Exception('Numero passage invalide');
-        }else {
+        } else {
             $this->NumPassage = $NumPassage;
         }
         return $this;
@@ -49,18 +48,15 @@ class Passage
         return $this->DateDePassage;
     }
 
-    public function SetTempDePassage(string $DateDePassage): self
+    public function setTempDePassage(string $DateDePassage): self
     {
-        if(! preg_match("/^([0-9]{1,2}:[0-5]{1}[0-9]{1}.[0-9]{1,3})$/",$DateDePassage)){
+        if (! preg_match("/^([0-9]{1,2}:[0-5]{1}[0-9]{1}.[0-9]{1,3})$/", $DateDePassage)) {
             throw new Exception('Date Invalide');
-        }else {
+        } else {
             $date = DateTime::createFromFormat('i:s.u', $DateDePassage);
             $this->DateDePassage = $date;
     
             return $this;
         }
     }
-
-
-  
 }

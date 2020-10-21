@@ -28,8 +28,8 @@ it('Attribute of',function() {
 });
 
 it('has function Existe',function(){
-    $this->expect(method_exists ($this->epreuve,'SetLieu'))->toBeTrue();
-    $this->expect(method_exists ($this->epreuve,'SetDate'))->toBeTrue();
+    $this->expect(method_exists ($this->epreuve,'setLieu'))->toBeTrue();
+    $this->expect(method_exists ($this->epreuve,'setDate'))->toBeTrue();
     $this->expect(method_exists ($this->epreuve,'getDate'))->toBeTrue();
     $this->expect(method_exists ($this->epreuve,'getId'))->toBeTrue();
     });
@@ -42,27 +42,27 @@ it('has function Existe',function(){
     })->with('ListId');
 
 it('test Set Lieu', function($Lieu){
-    $res = $this->epreuve->SetLieu($Lieu);
+    $res = $this->epreuve->setLieu($Lieu);
     $this->expect($res->getLieu())->toBeString();
     $this->assertMatchesRegularExpression("/^[a-z]* [0-9]{5}$/",$Lieu);
     })->with('LieuEpreuve');
 
 it("Test Exception Set Lieu",function($name) {
-    $this->epreuve->SetLieu($name);
+    $this->epreuve->setLieu($name);
     })->with('LieuEpreuveEx')->throws(Exception::class);
 
     it('should Setlieu return String', function(){
-        $this->epreuve->SetLieu('paris 75000');
+        $this->epreuve->setLieu('paris 75000');
         $this->expect($this->epreuve->getLieu())->toBeString();
     });
 
 it('test Set Date',function($Date) {
     $timeStage = DateTime::createFromFormat('d/m/Y', $Date);
-    $result = $this->epreuve->SetDate($Date);
+    $result = $this->epreuve->setDate($Date);
     $this->expect($result->getDate())->toEqual($timeStage);
     $this->assertMatchesRegularExpression("/^(((0[1-9])|(1\d)|(2\d)|(3[0-1]))\/((0[1-9])|(1[0-2]))\/(\d{4}))$/",$Date);
     })->with('DateEpreuve');
 
 it('test Exception Set date',function($Date) {
-    $this->epreuve->SetDate($Date);
+    $this->epreuve->setDate($Date);
 })->with('DateEpreuveEx')->throws(Exception::class);

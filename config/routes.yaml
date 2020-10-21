@@ -5,3 +5,6 @@
 home:
     path: /
     controller: App\Controllers\HomeController::homePage
+category:
+    path: /categorie
+    controller: App\Controllers\CategoriesController::showCategorie

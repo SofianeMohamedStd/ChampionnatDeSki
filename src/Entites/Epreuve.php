@@ -6,8 +6,7 @@ use DateTime;
 use Exception;
 use DateTimeInterface;
 
-
-class Epreuve 
+class Epreuve
 {
     /**
      * @var int
@@ -27,7 +26,7 @@ class Epreuve
     /**
      * @return int
      */
-    public function getId():int
+    public function getId(): int
     {
         return $this->id;
     }
@@ -35,7 +34,7 @@ class Epreuve
     /**
      * @return string
      */
-    public function getLieu():string 
+    public function getLieu(): string
     {
         return $this->Lieu;
     }
@@ -45,13 +44,12 @@ class Epreuve
      * @return void
      * @throws Exception
      */
-    public function SetLieu(string $Lieu):self
+    public function setLieu(string $Lieu): self
     {
-        if(! preg_match("/^[a-z]* [0-9]{5}$/", $Lieu))
-        {
+        if (! preg_match("/^[a-z]* [0-9]{5}$/", $Lieu)) {
             throw new Exception('Lieu invalide');
-        }else{
-        $this->Lieu = $Lieu;
+        } else {
+            $this->Lieu = $Lieu;
         }
         return $this;
     }
@@ -59,7 +57,7 @@ class Epreuve
     /**
      * @return DateTimeInterface
      */
-    public function getDate():DateTimeInterface
+    public function getDate(): DateTimeInterface
     {
         return $this->Date;
     }
@@ -68,14 +66,13 @@ class Epreuve
      * @param String $Date
      * @throws Exception
      */
-    public function SetDate(String $Date):self
+    public function setDate(string $Date): self
     {
-        if (! preg_match("/^(((0[1-9])|(1\d)|(2\d)|(3[0-1]))\/((0[1-9])|(1[0-2]))\/(\d{4}))$/",$Date))
-        {
+        if (! preg_match("/^(((0[1-9])|(1\d)|(2\d)|(3[0-1]))\/((0[1-9])|(1[0-2]))\/(\d{4}))$/", $Date)) {
             throw new Exception('date invalide');
-        }else {
-        $dateL = DateTime::createFromFormat('d/m/Y', $Date);
-        $this->Date = $dateL;
+        } else {
+            $dateL = DateTime::createFromFormat('d/m/Y', $Date);
+            $this->Date = $dateL;
         }
         return $this;
     }

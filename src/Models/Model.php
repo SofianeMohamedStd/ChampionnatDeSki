@@ -10,11 +10,9 @@ final class Model
     public function getPDO()
     {
         try {
-
-            return new PDO('mysql:host=localhost;dbname=ChampionnatDeSki;','root','');
+            return new PDO('mysql:host=localhost;dbname=ChampionnatDeSki;', 'root', '');
         } catch (Exception $error) {
-
-            die('Erreur : '.$error->getMessage());
+            die('Erreur : ' . $error->getMessage());
         }
     }
 }

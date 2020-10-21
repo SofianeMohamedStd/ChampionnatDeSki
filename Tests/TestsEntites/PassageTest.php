@@ -23,9 +23,9 @@ it('instance of',function() {
 });
 
 it('has Method Existe',function(){
-    $this->expect(method_exists ($this->passage,'SetNumPassage'))->toBeTrue();
+    $this->expect(method_exists ($this->passage,'setNumPassage'))->toBeTrue();
     $this->expect(method_exists ($this->passage,'getNumPassage'))->toBeTrue();
-    $this->expect(method_exists ($this->passage,'SetTempDePassage'))->toBeTrue();
+    $this->expect(method_exists ($this->passage,'setTempDePassage'))->toBeTrue();
     $this->expect(method_exists ($this->passage,'getTempDePassage'))->toBeTrue();
     });
 
@@ -37,16 +37,16 @@ it('verified type return must be integer', function($id){
 })->with('ListId');
 
 it('verified type & value of number of stage',function($num){
-    $this->passage->SetNumPassage($num);
+    $this->passage->setNumPassage($num);
 })->with('NumPassageEx')->throws(Exception::class);
 
 it('verified type of Time of passage', function($time){
     $timeStage = DateTime::createFromFormat('i:s.u', $time);
-    $result = $this->passage->SetTempDePassage($time);
+    $result = $this->passage->setTempDePassage($time);
     $this->expect($result->getTempDePassage())->toEqual($timeStage);
 })->with('TimePassage');
 
 it('test Exception Set Time',function($time) {
-    $this->passage->SetTempDePassage($time);
+    $this->passage->setTempDePassage($time);
 })->with('TimePassageEx')->throws(Exception::class);
 

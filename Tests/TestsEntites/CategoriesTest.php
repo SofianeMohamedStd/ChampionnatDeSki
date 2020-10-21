@@ -19,7 +19,7 @@ it('instance of',function() {
 });
 
 it('has function Existe',function(){
-    $this->expect(method_exists ($this->categorie,'SetNomCategorie'))->toBeTrue();
+    $this->expect(method_exists ($this->categorie,'setNomCategorie'))->toBeTrue();
     $this->expect(method_exists ($this->categorie,'getNomCategorie'))->toBeTrue();
     $this->expect(method_exists ($this->categorie,'getId'))->toBeTrue();
     });
@@ -31,18 +31,18 @@ it('return', function($id){
     })->with('ListId');
 
 it('should getNomString return String', function(){
-    $this->categorie->SetNomCategorie('Sofiane');
+    $this->categorie->setNomCategorie('Sofiane');
     $this->expect($this->categorie->getNomCategorie())->toBeString();
     });
 
 it('test Set NomCategorie', function($name){
-    $res = $this->categorie->SetNomCategorie($name);
+    $res = $this->categorie->setNomCategorie($name);
     $this->expect($res->getNomCategorie())->toBeString();
     $this->assertMatchesRegularExpression(",^[a-zA-Z0-9[\].-]+$,",$name);
     })->with('Categorie');
         
 it("Test Exception Set NomCategorie",function($name) {
-    $this->categorie->SetNomCategorie($name);
+    $this->categorie->setNomCategorie($name);
     })->with('CategorieEx')->throws(Exception::class);
 
 

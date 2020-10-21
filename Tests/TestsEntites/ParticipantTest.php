@@ -34,39 +34,39 @@ dataset('Photo',['img.jpg']);
 dataset('PhotoEx',['imgjpg']);
 
 it('has function Existe',function(){
-    $this->expect(method_exists ($this->participant,'SetNom'))->toBeTrue();
-    $this->expect(method_exists ($this->participant,'SetPrenom'))->toBeTrue();
-    $this->expect(method_exists ($this->participant,'SetEmail'))->toBeTrue();
-    $this->expect(method_exists ($this->participant,'SetCategorieID'))->toBeTrue();
-    $this->expect(method_exists ($this->participant,'SetProfilID'))->toBeTrue();
-    $this->expect(method_exists ($this->participant,'SetDateNaissance'))->toBeTrue();
-    $this->expect(method_exists ($this->participant,'SetPhoto'))->toBeTrue();
+    $this->expect(method_exists ($this->participant,'setNom'))->toBeTrue();
+    $this->expect(method_exists ($this->participant,'setPrenom'))->toBeTrue();
+    $this->expect(method_exists ($this->participant,'setEmail'))->toBeTrue();
+    $this->expect(method_exists ($this->participant,'setCategorieID'))->toBeTrue();
+    $this->expect(method_exists ($this->participant,'setProfilID'))->toBeTrue();
+    $this->expect(method_exists ($this->participant,'setDateNaissance'))->toBeTrue();
+    $this->expect(method_exists ($this->participant,'setPhoto'))->toBeTrue();
     });
 
 it('test Set Nom', function($name){
-        $res = $this->participant->SetNom($name);
+        $res = $this->participant->setNom($name);
         $this->expect($res->getNom())->toBeString();
     $this->assertMatchesRegularExpression("/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/",$name);
     })->with('Nom');
 
     it('should SetNom return String', function(){
-        $this->participant->SetNom('sofiane');
+        $this->participant->setNom('sofiane');
         $this->expect($this->participant->getNom())->toBeString();
     });
 
 it('test Set Prenom', function($prenom){
-        $res = $this->participant->SetPrenom($prenom);
+        $res = $this->participant->setPrenom($prenom);
         $this->expect($res->getPrenom())->toBeString();
     $this->assertMatchesRegularExpression("/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/",$prenom);
     })->with('Nom');
 
     it('should SetPrenom return String', function(){
-        $this->participant->SetPrenom('sofiane');
+        $this->participant->setPrenom('sofiane');
         $this->expect($this->participant->getPrenom())->toBeString();
     });
 
 it("Test Exception Set Prenom",function($prenom) {
-    $this->participant->SetNom($prenom);
+    $this->participant->setNom($prenom);
     })->with('NomEx')->throws(Exception::class);
 
 it('test Set Email', function($email){
@@ -74,12 +74,12 @@ it('test Set Email', function($email){
         })->with('Email');
 
 it('should SetEmail return String', function(){
-        $this->participant->SetEmail('sofiane@gmail.com');
+        $this->participant->setEmail('sofiane@gmail.com');
         $this->expect($this->participant->getEmail())->toBeString();
             });
         
 it("Test Exception Set Email",function($email) {
-        $this->participant->SetNom($email);
+        $this->participant->setNom($email);
         })->with('EmailEx')->throws(Exception::class);
 
 it('test Set Categorie', function($categorie){
@@ -88,11 +88,11 @@ it('test Set Categorie', function($categorie){
         })->with('CategorieId');
             
 it("Test Exception Set Categorie",function($categorie) {
-        $this->participant->SetCategorieID($categorie);
+        $this->participant->setCategorieID($categorie);
         })->with('CategrieExId')->throws(Exception::class);
 
 it('should SetCategorieID return String', function(){
-        $this->participant->SetCategorieID(1);
+        $this->participant->setCategorieID(1);
         $this->expect($this->participant->getCategorieID())->toBeInt();
         });
 
@@ -102,23 +102,23 @@ it('test Set Profil', function($profil){
         })->with('CategorieId');
 
 it('should SetProfilID return String', function(){
-        $this->participant->SetProfilID(1);
+        $this->participant->setProfilID(1);
         $this->expect($this->participant->getProfilID())->toBeInt();
         });
 
 it("Test Exception Set Profil",function($profil) {
-        $this->participant->SetProfilID($profil);
+        $this->participant->setProfilID($profil);
         })->with('CategrieExId')->throws(Exception::class);
 
 it('test Set Date',function($Date) {
         $timeStage = DateTime::createFromFormat('d/m/Y', $Date);
-        $result = $this->participant->SetDateNaissance($Date);
+        $result = $this->participant->setDateNaissance($Date);
         $this->expect($result->getDateNaissance())->toEqual($timeStage);
         $this->assertMatchesRegularExpression("/^(((0[1-9])|(1\d)|(2\d)|(3[0-1]))\/((0[1-9])|(1[0-2]))\/(\d{4}))$/",$Date);
         })->with('Date');
         
 it('test Exception Set date',function($Date) {
-        $this->participant->SetDateNaissance($Date);
+        $this->participant->setDateNaissance($Date);
         })->with('DateEx')->throws(Exception::class);
 
 it('test Set Photo',function($Photo) {
@@ -126,11 +126,11 @@ it('test Set Photo',function($Photo) {
         })->with('Photo');
 
 it('should SetPhoto return String', function(){
-        $this->participant->SetPhoto('img.png');
+        $this->participant->setPhoto('img.png');
         $this->expect($this->participant->getPhoto())->toBeString();
         });
 
 it('test Exception Set Photo',function($Photo) {
-        $this->participant->SetPhoto($Photo);
+        $this->participant->setPhoto($Photo);
         })->with('PhotoEx')->throws(Exception::class);
 

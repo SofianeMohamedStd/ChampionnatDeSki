@@ -19,7 +19,7 @@ class Profil
     /**
      * @return int
      */
-    public function getId(): int 
+    public function getId(): int
     {
         return $this->id;
     }
@@ -27,7 +27,7 @@ class Profil
     /**
      * @return String
      */
-    public function getNomProfil(): String
+    public function getNomProfil(): string
     {
         return $this->NomProfil;
     }
@@ -36,15 +36,11 @@ class Profil
      * @param string $NomProfil
      * @throws Exception
      */
-    public function SetNomProfil(string $NomProfil)
+    public function setNomProfil(string $NomProfil)
     {
-        if(! preg_match(",^[a-zA-Z0-9[\].-:]+$,", $NomProfil))
-        {
+        if (! preg_match(",^[a-zA-Z0-9[\].-:]+$,", $NomProfil)) {
             throw new Exception('verifier le nom');
         }
         $this->NomProfil = $NomProfil;
-
     }
-
-   
 }

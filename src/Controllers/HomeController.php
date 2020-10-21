@@ -8,7 +8,7 @@ use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
 use Twig\Error\SyntaxError;
 
-final class HomeController extends Controller
+final class HomeController extends AbstractController
 {
     /**
      * @Route("/")
@@ -24,9 +24,8 @@ final class HomeController extends Controller
     }
 
     public function errorPage($error): void
-    {   
+    {
         $error = 'Erreur : ' . $error->getMessage();
         echo $this->twig->render('errorView.html.twig', ['error' => $error]);
     }
 }
-  

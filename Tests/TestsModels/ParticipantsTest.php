@@ -10,9 +10,9 @@ beforeEach(function () {
 
 it('test of instance and all Methodes exist in Model participants', function(){
     $this->expect($this->participantsM)->toBeInstanceOf(Participants::class);
-    $this->expect(method_exists ($this->participantsM,  'AddParticipant' ))->toBeTrue();
-    $this->expect(method_exists ($this->participantsM,  'UpDateParticipant' ))->toBeTrue();
-    $this->expect(method_exists ($this->participantsM,  'DeleteParticipant' ))->toBeTrue();
-    $this->expect(method_exists ($this->participantsM,  'GetAllParticipants' ))->toBeTrue();
-    $this->expect(method_exists ($this->participantsM,  'GetOneParticipant' ))->toBeTrue();
+    $this->expect(method_exists ($this->participantsM,  'addParticipant' ))->toBeTrue();
+    $this->expect(method_exists ($this->participantsM,  'upDateParticipant' ))->toBeTrue();
+    $this->expect(method_exists ($this->participantsM,  'deleteParticipant' ))->toBeTrue();
+    $this->expect(method_exists ($this->participantsM,  'getAllParticipants' ))->toBeTrue();
+    $this->expect(method_exists ($this->participantsM,  'getOneParticipant' ))->toBeTrue();
     });

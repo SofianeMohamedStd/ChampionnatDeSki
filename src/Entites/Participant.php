@@ -59,7 +59,7 @@ class Participant
     /**
      * @return string
      */
-    public function getNom(): ?string 
+    public function getNom(): ?string
     {
         return $this->Nom;
     }
@@ -69,12 +69,12 @@ class Participant
      * @return Participant
      * @throws Exception
      */
-    public function SetNom($Nom): self
+    public function setNom($Nom): self
     {
-        if(! preg_match("/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/",$Nom)){
+        if (! preg_match("/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/", $Nom)) {
             throw new Exception('nom invalide');
-        }else {
-        $this->Nom = $Nom;
+        } else {
+            $this->Nom = $Nom;
         }
         return $this;
     }
@@ -82,7 +82,7 @@ class Participant
     /**
      * @return string
      */
-    public function getPrenom(): ?string 
+    public function getPrenom(): ?string
     {
         return $this->Prenom;
     }
@@ -92,13 +92,12 @@ class Participant
      * @return Participant
      * @throws Exception
      */
-    public function SetPrenom(string $Prenom): self
+    public function setPrenom(string $Prenom): self
     {
-        if(! preg_match("/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/",$Prenom)){
+        if (! preg_match("/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/", $Prenom)) {
             throw new Exception('prenom invalide');
-        }else
-        {
-        $this->Prenom = $Prenom;
+        } else {
+            $this->Prenom = $Prenom;
         }
         return $this;
     }
@@ -106,7 +105,7 @@ class Participant
     /**
      * @return string
      */
-    public function getEmail(): ?string 
+    public function getEmail(): ?string
     {
         return $this->Email;
     }
@@ -115,10 +114,9 @@ class Participant
      * @param string $Email
      * @throws Exception
      */
-    public function SetEmail(string $Email)
+    public function setEmail(string $Email)
     {
-        if(! preg_match("/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/",$Email))
-        {
+        if (! preg_match("/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/", $Email)) {
             throw new Exception('Email invalide');
         }
         $this->Email = $Email;
@@ -136,10 +134,9 @@ class Participant
      * @param int $CategorieID
      * @throws Exception
      */
-    public function SetCategorieID(int $CategorieID)
+    public function setCategorieID(int $CategorieID)
     {
-        if(! is_int($CategorieID) || ($CategorieID <= 0))
-        {
+        if (! is_int($CategorieID) || ($CategorieID <= 0)) {
             throw new Exception('Categorie invalide');
         }
         $this->CategorieID = $CategorieID;
@@ -148,7 +145,7 @@ class Participant
     /**
      * @return int
      */
-    public function getProfilID(): ?int 
+    public function getProfilID(): ?int
     {
         return $this->ProfilID;
     }
@@ -157,10 +154,9 @@ class Participant
      * @param int $ProfilID
      * @throws Exception
      */
-    public function SetProfilID(int $ProfilID)
+    public function setProfilID(int $ProfilID)
     {
-        if(! is_int($ProfilID) || ($ProfilID <= 0))
-        {
+        if (! is_int($ProfilID) || ($ProfilID <= 0)) {
             throw new Exception('Profil invalide');
         }
         $this->ProfilID = $ProfilID;
@@ -179,14 +175,13 @@ class Participant
      * @return Participant
      * @throws Exception
      */
-    public function SetDateNaissance(string $DateNaissance):self
+    public function setDateNaissance(string $DateNaissance): self
     {
-        if (! preg_match("/^(((0[1-9])|(1\d)|(2\d)|(3[0-1]))\/((0[1-9])|(1[0-2]))\/(\d{4}))$/",$DateNaissance))
-        {
+        if (! preg_match("/^(((0[1-9])|(1\d)|(2\d)|(3[0-1]))\/((0[1-9])|(1[0-2]))\/(\d{4}))$/", $DateNaissance)) {
             throw new Exception('date invalide');
-        }else{
-        $dateL = DateTime::createFromFormat('d/m/Y', $DateNaissance);
-        $this->DateNaissance = $dateL;
+        } else {
+            $dateL = DateTime::createFromFormat('d/m/Y', $DateNaissance);
+            $this->DateNaissance = $dateL;
         }
         return $this;
     }
@@ -194,7 +189,7 @@ class Participant
     /**
      * @return string
      */
-    public function getPhoto(): ?string 
+    public function getPhoto(): ?string
     {
         return $this->Photo;
     }
@@ -203,13 +198,11 @@ class Participant
      * @param string $Photo
      * @throws Exception
      */
-    public function SetPhoto(string $Photo)
+    public function setPhoto(string $Photo)
     {
-        if(! preg_match("/.*\.(gif|jpe?g|bmp|png)$/",$Photo))
-        {
+        if (! preg_match("/.*\.(gif|jpe?g|bmp|png)$/", $Photo)) {
             throw new Exception('photo invalide');
         }
         $this->Photo = $Photo;
     }
-
 }

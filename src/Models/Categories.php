@@ -1,13 +1,9 @@
 <?php
 
-
 namespace App\Models;
 
-
 use App\Repository\CategoriesRepository;
-use \App\Entites\Categorie;
-
-
+use App\Entites\Categorie;
 
 class Categories implements CategoriesRepository
 {
@@ -22,15 +18,15 @@ class Categories implements CategoriesRepository
 
 
 
-    public function Add(Categorie $categorie)
+    public function add(Categorie $categorie)
     {
         $req = $this->db->prepare("INSERT INTO categories(nom_categorie) VALUE (?)");
         return $req->execute(array(
-            $categorie->getNomCategorie ()
+            $categorie->getNomCategorie()
             ));
     }
 
-    public function findAll():array
+    public function findAll(): array
     {
         $req = $this->db->prepare('SELECT * FROM categories');
         $req->execute();
@@ -38,7 +34,7 @@ class Categories implements CategoriesRepository
         return $req->fetchAll();
     }
 
-    public function find(int $categorie):array
+    public function find(int $categorie): array
     {
         $req = $this->db->prepare('SELECT * FROM categories WHERE id = ?');
         $req->execute(array($categorie));
