@@ -1,3 +1,7 @@
+name: Run PHP CodeSniffer
+
+# NB: Pull requests from forks do not have access to repository secrets so cannot commit changes.
+
 on:
   push:
     branches:
