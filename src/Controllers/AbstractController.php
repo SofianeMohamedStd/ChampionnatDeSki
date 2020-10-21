@@ -14,6 +14,7 @@ abstract class AbstractController
     public function __construct()
     {
         $this->loader = new FilesystemLoader('src/Views');
+        
         $this->twig = new Environment($this->loader, []);
 
         return $this->twig;
