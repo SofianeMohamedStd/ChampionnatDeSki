@@ -11,6 +11,8 @@ jobs:
       - uses: php-actions/composer@v1
       - name: Run phpunit
         run: ./vendor/bin/phpunit-watcher
+        with:
+        configuration: phpunit-watcher.yml
       - name: Run phpcs
         run: ./vendor/bin/phpcs
        
