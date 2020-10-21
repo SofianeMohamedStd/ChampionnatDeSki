@@ -1,5 +1,3 @@
-phpunit-watcher.yml
-phpunit.xml
 package-lock.json
 debug.log
 composer.json
