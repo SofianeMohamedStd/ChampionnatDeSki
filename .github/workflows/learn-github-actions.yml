@@ -1,3 +1,4 @@
+name: ChampionnatDeSki
 on: push
 name: CI
 jobs:
