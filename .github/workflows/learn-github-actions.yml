@@ -11,4 +11,6 @@ jobs:
       - uses: php-actions/composer@v1
       - name: Run phpunit
         run: ./vendor/bin/pest
+      - name: Run phpcs
+        run: ./vendor/bin/phpcs
        
