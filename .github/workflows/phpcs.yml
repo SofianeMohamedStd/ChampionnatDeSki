@@ -1,12 +1,16 @@
-name: PHPCS check
-
-on: pull_request
-
-jobs:
-  phpcs:
-      name: PHPCS
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v2
-        - name: PHPCS check
-          uses: chekalsky/phpcs-action@v1
+phpcs PSR12:
+  stage: linting
+  image: pipelinecomponents/php-codesniffer:latest
+  script:
+    - phpcs -s -p --colors --extensions=php --standard=PSR2 .
+php-compatibility 7.4:
+  stage: test
+  image: pipelinecomponents/php-codesniffer:latest
+  variables:
+    PHPVERSION: "7.4"
+  script:
+    - >-
+      phpcs -s -p --colors
+      --standard=PHPCompatibility
+      --extensions=php
+      --runtime-set testVersion ${PHPVERSION} .
