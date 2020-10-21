@@ -42,7 +42,7 @@ it('test Set NomCategorie', function($name){
     })->with('Categorie');
         
 it("Test Exception Set NomCategorie",function($name) {
-    $this->categorie->setNomCategorie($name);
+    $this->categorie->etNomCategorie($name);
     })->with('CategorieEx')->throws(Exception::class);
 
 
