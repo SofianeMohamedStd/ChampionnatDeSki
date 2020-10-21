@@ -7,9 +7,9 @@ use App\Entites\Categorie;
 use PHPUnit\Framework\TestCase;
 
 
-dataset('Categorie', ['senior', 'M','Mn']);
-dataset('CategorieEx', ['M1 n','M1_','M1/']);
-dataset('ListId',[1,2,3,4,5]);
+//dataset('Categorie', ['senior', 'M','Mn']);
+//dataset('CategorieEx', ['M1 n','M1_','M1/']);
+//dataset('ListId',[1,2,3,4,5]);
 
 it('instance of',function() {
     $this->categorie = new Categorie();
@@ -29,7 +29,7 @@ it('return', function($id){
     $stub->method('getId')
     ->willReturn($id);
     $this->assertSame($id, $stub->getId());
-    })->with('ListId');
+    })->with([1,2,3,4,5]);
 
 it('should getNomString return String', function(){
     $this->categorie = new Categorie();
@@ -42,12 +42,12 @@ it('test Set NomCategorie', function($name){
     $res = $this->categorie->setNomCategorie($name);
     $this->expect($res->getNomCategorie())->toBeString();
     $this->assertMatchesRegularExpression(",^[a-zA-Z0-9[\].-]+$,",$name);
-    })->with('Categorie');
+    })->with(['senior', 'M','Mn']);
         
 it("Test Exception Set NomCategorie",function($name) {
     $this->categorie = new Categorie();
     $this->categorie->setNomCategorie($name);
-    })->with('CategorieEx')->throws(Exception::class);
+    })->with(['M1 n','M1_','M1/'])->throws(Exception::class);
 
 
 
