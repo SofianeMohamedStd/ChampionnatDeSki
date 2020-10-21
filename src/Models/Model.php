@@ -2,27 +2,19 @@
 
 namespace App\Models;
 
+use Exception;
 use PDO;
 
-abstract class Model
+final class Model
 {
-    private const OPTIONS = [
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-    ];
-
-    protected static $_pdo = null;
-
-    protected static function getPdo()
+    public function getPDO()
     {
-        if(is_null(self::$_pdo)){
-           try
-            {
-                self::$_pdo = new PDO('mysql:host=localhost;dbname=ChampionnatDeSki;','root','');
-            } catch (PDOException $e)
-            {
-            die('Erreur : '.$e->getMessage());
-            }
+        try {
+
+            return new PDO('mysql:host=localhost;dbname=ChampionnatDeSki;','root','');
+        } catch (Exception $error) {
+
+            die('Erreur : '.$error->getMessage());
         }
-        return self::$_pdo;
     }
 }

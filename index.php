@@ -1,6 +1,7 @@
 <?php
 
 use App\Controllers\HomeController;
+use App\Repository\CategorieRepository;
 use JsonSchema\Exception\ResourceNotFoundException;
 use Symfony\Component\Routing\Generator\UrlGenerator;
 use Symfony\Component\Routing\Matcher\UrlMatcher;
@@ -28,8 +29,6 @@ try
     $request =  Request::createFromGlobals();
     $context = new RequestContext();
 
-  // var_dump($request);
- // var_dump($context);
     $context->fromRequest($request);
 
     // Init UrlMatcher object
@@ -38,12 +37,6 @@ try
     // Find the current route
     $parameters = $matcher->match($context->getPathInfo());
     
-/*
-    // How to generate a SEO URL
-    $generator = new UrlGenerator($routes, $context);
-    $url = $generator->generate('home');
-    var_dump($generator);
-*/
     $params = explode('::', $parameters['_controller']);
     $response = new Response();
 
@@ -53,26 +46,27 @@ try
     $action = $params[1];
     $controller = new $controller();
 
+
         if (method_exists($controller, $action)) {
            call_user_func_array([$controller,$action], [$request, $response]);
 
         } else {
-            // On envoie le code réponse 404
+            // Send 404 response
             http_response_code(404);
-            $error = "La page recherchée n'existe pas";
+            $error = "The requested page does not exist";
             $controller = new HomeController();
             $controller->errorPage($error);
         }
 
     } else {
-        // Ici aucun paramètre n'est défini
-        // On instancie le contrôleur
+        // 
+        // Instance contrôleur
         $controller = new HomeController();
-        // On appelle la méthode index
+        // Call method HomePage
         $controller->homePage($request, $response);
     }
 }
-catch (Exception $error) { // S'il y a eu une erreur, alors...
+catch (Exception $error) { 
     $controller = new HomeController();
     $controller->errorPage($error);
 }

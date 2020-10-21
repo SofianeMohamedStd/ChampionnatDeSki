@@ -1,11 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="88fbb36d-61f8-48bf-8eda-7a505acca904" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/css/filipCard.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controllers/CategoriesController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Models/Categories.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Models/Profiles.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/CategoriesRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/ProfilsRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ChampionnatDeSki.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ChampionnatDeSki.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entites/Categorie.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entites/Categorie.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entites/Epreuve.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entites/Epreuve.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entites/Participant.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entites/Participant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entites/Profil.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entites/Profil.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/HomeView.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/HomeView.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/template.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/template.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,6 +117,16 @@
       <path value="$PROJECT_DIR$/vendor/evenement/evenement" />
       <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
       <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/vendor/pestphp/.temp" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/vendor/symfony/config" />
+      <path value="$PROJECT_DIR$/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/vendor/symfony/serializer" />
     </include_path>
   </component>
   <component name="ProjectId" id="1ilpMgJOaFarwCbIQ18Fn01dnV7" />
@@ -104,6 +145,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -124,10 +166,46 @@
       <workItem from="1602509845475" duration="2208000" />
       <workItem from="1602592070425" duration="1119000" />
       <workItem from="1602625276074" duration="173000" />
+      <workItem from="1603111292649" duration="17299000" />
+      <workItem from="1603196436620" duration="10054000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="574" y="94" key="#com.intellij.ide.util.MemberChooser" timestamp="1603197238820">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="94" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1603197238820" />
+    <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1603261693266">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1603261693266" />
+    <state x="498" y="30" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603115144885">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="498" y="30" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1603115144885" />
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603121243279">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1603121243279" />
+    <state x="528" y="135" key="NewPhpClassDialog" timestamp="1603261930315">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="528" y="135" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1603261930315" />
   </component>
 </project>

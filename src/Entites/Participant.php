@@ -66,6 +66,7 @@ class Participant
 
     /**
      * @param $Nom
+     * @return Participant
      * @throws Exception
      */
     public function SetNom($Nom): self
@@ -88,6 +89,7 @@ class Participant
 
     /**
      * @param string $Prenom
+     * @return Participant
      * @throws Exception
      */
     public function SetPrenom(string $Prenom): self
@@ -174,6 +176,7 @@ class Participant
 
     /**
      * @param string $DateNaissance
+     * @return Participant
      * @throws Exception
      */
     public function SetDateNaissance(string $DateNaissance):self

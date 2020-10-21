@@ -15,38 +15,39 @@ class Categorie
      * @var string
      */
     private string $NomCategorie;
+
     /**
      * @return int
      */
-    public function getId(): int 
+    public function getId () : int
     {
-        return $this->id;
+        return $this -> id;
     }
 
     /**
      * @return String
      */
-    public function getNomCategorie(): String
+    public function getNomCategorie () : string
     {
-        return $this->NomCategorie;
+        return $this -> NomCategorie;
     }
 
     /**
      * @param string $NomCategorie
+     * @return Categorie
      * @throws Exception
      */
-    public function SetNomCategorie(String $NomCategorie):self
+    public function SetNomCategorie ( string $NomCategorie ) : self
     {
-        if(! preg_match(",^[a-zA-Z0-9[\].-]+$,", $NomCategorie))
-        {
-            throw new Exception('verifier le nom');
-        }else{
-           $this->NomCategorie = $NomCategorie; 
+        if ( ! preg_match ( ",^[a-zA-Z0-9[\].-]+$," , $NomCategorie ) ) {
+            throw new Exception( 'verifier le nom' );
+        } else {
+            $this -> NomCategorie = $NomCategorie;
         }
         return $this;
 
-        
+
     }
 
-   
+
 }
