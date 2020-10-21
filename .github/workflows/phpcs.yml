@@ -1,18 +1,27 @@
-on: push
+on:
+  push:
+    branches:
+      - master
+
 jobs:
-  phpcs PSR12:
-    stage: linting
-    image: pipelinecomponents/php-codesniffer:latest
-    script:
-      - phpcs -s -p --colors --extensions=php --standard=PSR12 .
-php-compatibility 7.4:
-  stage: test
-  image: pipelinecomponents/php-codesniffer:latest
-  variables:
-    PHPVERSION: "7.4"
-  script:
-    - >-
-      phpcs -s -p --colors
-      --standard=PHPCompatibility
-      --extensions=php
-      --runtime-set testVersion ${PHPVERSION} .
+  php-codesniffer:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Run Composer install
+        uses: php-actions/composer@v1
+
+      - name: Run PHPCS
+        continue-on-error: true
+        run: vendor/bin/phpcs --report=GitHubActionsAnnotations
+
+      - name: Run PHPCBF
+        continue-on-error: true
+        run: vendor/bin/phpcbf
+
+      - name: Commit PHPCBF changes
+        uses: stefanzweifel/git-auto-commit-action@v4.1.1
+        with:
+          commit_message: "PHPCBF"
