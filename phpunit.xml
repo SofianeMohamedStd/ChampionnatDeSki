@@ -5,12 +5,12 @@
 >
     <testsuites>
         <testsuite name="main">
-            <directory suffix="Test.php">.</directory>
+            <directory suffix="Test.php">./Tests</directory>
         </testsuite>
     </testsuites>
     <coverage processUncoveredFiles="true">
         <include>
-            <directory suffix=".php">../src</directory>
+            <directory suffix=".php">./src</directory>
         </include>
     </coverage>
 </phpunit>
