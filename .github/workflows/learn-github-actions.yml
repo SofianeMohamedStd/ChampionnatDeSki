@@ -9,8 +9,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: php-actions/composer@v1
-      - name: PHPUnit Tests
-        uses: php-actions/phpunit@v9
+      - name: Run phpunit
+        run: ./vendor/bin/pest
         with:
           configuration: phpunit.xml
           args: --coverage-text
