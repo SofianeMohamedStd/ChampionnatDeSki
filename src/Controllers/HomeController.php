@@ -23,9 +23,4 @@ final class HomeController extends AbstractController
         echo $this->twig->render('HomeView.html.twig', ['user' => false]);
     }
 
-    public function errorPage($error): void
-    {
-        $error = 'Erreur : ' . $error->getMessage();
-        echo $this->twig->render('errorView.html.twig', ['error' => $error]);
-    }
 }

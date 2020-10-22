@@ -19,7 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88fbb36d-61f8-48bf-8eda-7a505acca904" name="Default Changelist" comment="" />
+    <list default="true" id="88fbb36d-61f8-48bf-8eda-7a505acca904" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Controllers/ErrorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/learn-github-actions.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/learn-github-actions.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.phpunit.result.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.phpunit.result.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/AbstractController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AbstractController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/CategoriesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/CategoriesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/HomeController.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

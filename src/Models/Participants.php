@@ -5,18 +5,16 @@ namespace App\Models;
 use App\Entites\Participant;
 use App\Repository\ParticipantsRepository;
 
-class Participants implements ParticipantsRepository
+class Participants extends AbstractModel implements ParticipantsRepository
 {
-    private object $db;
     public function __construct()
     {
-        $pdo = new Model();
-        $this->db = $pdo->getPDO();
+        $this->pdo = parent::getPdo();
     }
 
     public function addParticipant(Participant $participant)
     {
-        $req = $this->db->prepare("INSERT INTO participants(categorie_id,profil_id,nom,
+        $req = $this->pdo->prepare("INSERT INTO participants(categorie_id,profil_id,nom,
         prenom,date_de_naissance,photo,email) VALUE (?,?,?,?,?,?,?)");
         return $req->execute(array(
             $participant->getCategorieID(),
@@ -32,7 +30,7 @@ class Participants implements ParticipantsRepository
 
     public function upDateParticipant(Participant $participant)
     {
-        $req = $this->db->prepare("UPDATE participants SET (categorie_id = :categorie_id, profil_id = :profil_id,
+        $req = $this->pdo->prepare("UPDATE participants SET (categorie_id = :categorie_id, profil_id = :profil_id,
          nom = :nom, prenom = :prenom,date_de_naissance = :date_de_naissance, photo = :photo, email = :email
           WHERE id = :id");
         return $req->execute(array(
@@ -49,7 +47,7 @@ class Participants implements ParticipantsRepository
 
     public function deleteParticipant(Participant $participant)
     {
-        $req = $this->db->prepare('DELETE FROM participants where id = ?');
+        $req = $this->pdo->prepare('DELETE FROM participants where id = ?');
         return $req->execute(array(
             'id' => $participant->getId()
         ));
@@ -57,14 +55,14 @@ class Participants implements ParticipantsRepository
    
     public function getAllParticipants(): array
     {
-        $req = $this->db->prepare('SELECT * FROM participants');
+        $req = $this->pdo->prepare('SELECT * FROM participants');
         $req->execute();
         return $req->fetchAll();
     }
 
     public function getOneParticipant(Participant $participant): array
     {
-        $req = $this->db->prepare('SELECT * From participants WHERE id = ?');
+        $req = $this->pdo->prepare('SELECT * From participants WHERE id = ?');
         $req->execute(array(
             'id' => $participant->getId()
         ));

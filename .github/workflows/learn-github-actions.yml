@@ -9,10 +9,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: php-actions/composer@v1
-      - name: Run phpunit
-        run: ./vendor/bin/phpunit-watcher
-          with:
-            configuration: phpunit-watcher.yml
+      - name: PHPUnit Tests
+        uses: php-actions/phpunit@v9
+        with:
+          configuration: phpunit.xml
 
 
 

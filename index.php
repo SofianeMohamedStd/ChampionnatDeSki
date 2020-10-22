@@ -1,72 +1,36 @@
-<?php
-
-use App\Controllers\HomeController;
-use App\Repository\CategorieRepository;
-use JsonSchema\Exception\ResourceNotFoundException;
-use Symfony\Component\Routing\Generator\UrlGenerator;
-use Symfony\Component\Routing\Matcher\UrlMatcher;
-use Symfony\Component\Routing\RequestContext;
-use Symfony\Component\Routing\Route;
-use Symfony\Component\Routing\RouteCollection;
-use Symfony\Component\Config\FileLocator;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Loader\YamlFileLoader;
-
+ <?php
 require __DIR__.'/vendor/autoload.php';
 
 
-$params = explode('/', $_GET['url']);
+
+use App\Controllers\ErrorController;
+use Symfony\Component\Config\FileLocator;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\Exception\MethodNotAllowedException;
+use Symfony\Component\Routing\Exception\ResourceNotFoundException;
+use Symfony\Component\Routing\Loader\YamlFileLoader;
+use Symfony\Component\Routing\Matcher\UrlMatcher;
+use Symfony\Component\Routing\RequestContext;
 
 
-try
-{
-    // Load routes from the yaml file
-    $fileLocator = new FileLocator(array(__DIR__.'/config'));
-    $loader = new YamlFileLoader($fileLocator);
-    $routes = $loader->load('routes.yaml');
-    // Init RequestContext object
-    $request =  Request::createFromGlobals();
-    $context = new RequestContext();
+$fileLocator = new FileLocator(array(__DIR__.'/config'));
+$loader = new YamlFileLoader($fileLocator);
+$routes = $loader->load('routes.yaml');
 
-    $context->fromRequest($request);
+$request = Request::createFromGlobals();
+$context = new RequestContext();
+$context->fromRequest($request);
+$matcher = new UrlMatcher($routes, $context);
 
-    // Init UrlMatcher object
-    $matcher = new UrlMatcher($routes, $context);
+try {
+    $attributes = $matcher->match($request->getPathInfo());
+    $object = explode('::', $attributes['_controller']);
+    $class = $object[0];
 
-    // Find the current route
-    $parameters = $matcher->match($context->getPathInfo());
-    
-    $params = explode('::', $parameters['_controller']);
-    $response = new Response();
-
-    if ($params[0] !== null) {
-
-    $controller = $params[0];
-    $action = $params[1];
-    $controller = new $controller();
-
-
-        if (method_exists($controller, $action)) {
-           call_user_func_array([$controller,$action], [$request, $response]);
-
-        } else {
-            // Send 404 response
-            http_response_code(404);
-            $error = "The requested page does not exist";
-            $controller = new HomeController();
-            $controller->errorPage($error);
-        }
-
-    } else {
-        // 
-        // Instance contrôleur
-        $controller = new HomeController();
-        // Call method HomePage
-        $controller->homePage($request, $response);
-    }
-}
-catch (Exception $error) { 
-    $controller = new HomeController();
-    $controller->errorPage($error);
+    call_user_func_array([new $class(), $object[1]], [$request, $attributes]);
+} catch (ResourceNotFoundException $exception) {
+    $response = call_user_func(new ErrorController());
+    $response->send();
+} catch (MethodNotAllowedException $exception) {
+    echo $exception->getMessage();
 }

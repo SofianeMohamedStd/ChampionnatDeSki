@@ -5,20 +5,18 @@ namespace App\Models;
 use App\Entites\Profil;
 use App\Repository\ProfilsRepository;
 
-class Profils implements ProfilsRepository
+class Profils extends AbstractModel implements ProfilsRepository
 {
-    private object $db;
+    
 
     public function __construct()
     {
-        $pdo = new Model();
-        $this->db = $pdo->getPDO();
+        $this->pdo = parent::getPdo();
     }
-
 
     public function add(Profil $profil)
     {
-        $req = $this->db->prepare("INSERT INTO profils(nom_profil) VALUE (?)");
+        $req = $this->pdo->prepare("INSERT INTO profils(nom_profil) VALUE (?)");
         return $req->execute(array(
             $profil->getNomProfil()
         ));
@@ -26,7 +24,7 @@ class Profils implements ProfilsRepository
 
     public function findAll(): array
     {
-        $req = $this->db->prepare('SELECT * FROM profils');
+        $req = $this->pdo->prepare('SELECT * FROM profils');
         $req->execute();
 
         return $req->fetchAll();
@@ -34,7 +32,7 @@ class Profils implements ProfilsRepository
 
     public function find(int $profil): array
     {
-        $req = $this->db->prepare('SELECT * FROM profils WHERE id = ?');
+        $req = $this->pdo->prepare('SELECT * FROM profils WHERE id = ?');
         $req->execute(array($profil));
 
         return $req->fetchAll();

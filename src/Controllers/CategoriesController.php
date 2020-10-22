@@ -14,8 +14,7 @@ class CategoriesController extends AbstractController
     private Categories $Category;
     public function __construct()
     {
-        $this->loader = new FilesystemLoader('src/Views');
-        $this->twig = new Environment($this->loader, []);
+        $this->twig = parent::getTwig();
         $this->Category = new Categories();
     }
 
@@ -24,7 +23,7 @@ class CategoriesController extends AbstractController
         $categories = $this->Category->findAll();
         var_dump($categories);
         try {
-            echo $this -> twig -> render('CategorieView.html.twig', ['categories' => $categories , 'foo' => null]);
+            echo $this -> twig -> render('CategorieView.html.twig', ['Listecategories' => $categories]);
         } catch (LoaderError $e) {
         } catch (RuntimeError $e) {
         } catch (SyntaxError $e) {
