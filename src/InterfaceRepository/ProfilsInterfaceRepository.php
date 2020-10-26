@@ -9,4 +9,5 @@ interface ProfilsRepository
     public function add(Profil $profil);
     public function findAll();
     public function find(int $profil);
+    public function findbyName(Profil $profil): array;
 }

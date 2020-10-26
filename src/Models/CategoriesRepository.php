@@ -37,4 +37,13 @@ class Categories extends AbstractModel implements CategoriesRepository
 
         return $req->fetchAll();
     }
+
+    public function findbyName(Categorie $categorie): array
+    {
+        $req = $this->pdo->prepare('SELECT *
+        FROM categories WHERE nom_categorie = ?');
+        $req->execute(array($categorie->getNomCategorie()));
+
+        return $req->fetchAll();
+    }
 }

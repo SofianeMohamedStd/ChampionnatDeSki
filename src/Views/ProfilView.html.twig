@@ -1,0 +1,51 @@
+{% extends 'template.html.twig' %}
+{% block title %}
+    Categories
+{% endblock %}
+
+{% block content %}
+    <div class="row mx-auto">
+        <div class="col-8 offset-2">
+            <h1>Categories</h1>
+        </div>
+         <div class="col-6 offset-3">
+            <form method="post" action="http://localhost/www/ChampionnatDeSki/profil/add" id="formAdd" class="">
+            <div class="form-group mt-2">
+                            
+                            <label for="name" class="text-left col-10">
+                                Nouveau nom : </label>
+                            <input class="form-control col-10" type="text" name="name"
+                            id="" required minlength="2">
+            </div>
+            <input type="submit" class="btn btn-success" value="Valider" />
+            </form>
+        </div>
+        </div>
+    </div>
+    </div>
+    {% if Listeprofils|length != 0 %}
+    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Profil</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for profil in Listeprofils %}
+                            <tr>
+                                <th scope="row">{{ profil.id }}</th>
+                                <td>{{ profil.nom_profil }}</td>
+                                <td>
+                                    <button type="button" class="btn btn-warning"><i class="far fa-eye">Modifier</i></button>
+                                    <button type="button" class="btn btn-danger"><i class="fas fa-edit">Supprimer</i></button>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                            </table>
+    {% else %}
+        hi
+    {% endif %}
+{% endblock %}

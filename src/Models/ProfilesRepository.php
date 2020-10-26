@@ -5,7 +5,7 @@ namespace App\Models;
 use App\Entites\Profil;
 use App\Repository\ProfilsRepository;
 
-class Profils extends AbstractModel implements ProfilsRepository
+class Profiles extends AbstractModel implements ProfilsRepository
 {
     
 
@@ -34,6 +34,15 @@ class Profils extends AbstractModel implements ProfilsRepository
     {
         $req = $this->pdo->prepare('SELECT * FROM profils WHERE id = ?');
         $req->execute(array($profil));
+
+        return $req->fetchAll();
+    }
+
+    public function findbyName(Profil $profil): array
+    {
+        $req = $this->pdo->prepare('SELECT *
+        FROM profils WHERE nom_profil = ?');
+        $req->execute(array($profil->getNomProfil()));
 
         return $req->fetchAll();
     }

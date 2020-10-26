@@ -9,4 +9,5 @@ interface CategoriesRepository
     public function add(Categorie $categorie);
     public function findAll(): array;
     public function find(int $categorie);
+    public function findbyName(Categorie $categorie): array;
 }
