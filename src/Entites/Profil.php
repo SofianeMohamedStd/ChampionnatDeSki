@@ -43,4 +43,11 @@ class Profil
         }
         $this->NomProfil = $NomProfil;
     }
+    public function buildFromTableProfil(array $dataProfil): self
+    {
+        $this->id = $dataProfil['id'];
+        $this->NomProfil = $dataProfil['nom_profil'];
+
+        return $this;
+    }
 }

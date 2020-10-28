@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Repository;
+namespace App\InterfaceRepository;
 
 use App\Entites\Epreuve;
 
-interface EpreuvesRepository
+interface EpreuvesInterfaceRepository
 {
     public function add(Epreuve $epreuve);
     public function findAll(): array;

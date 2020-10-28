@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Repository;
+namespace App\InterfaceRepository;
 
 use App\Entites\Profil;
 
-interface ProfilsRepository
+interface ProfilsInterfaceRepository
 {
     public function add(Profil $profil);
     public function findAll();

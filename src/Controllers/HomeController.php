@@ -2,8 +2,8 @@
 
 namespace App\Controllers;
 
-use App\Models\Categories;
-use App\Repository\CategorieRepository;
+use App\Models\CategoriesRepository;
+use App\InterfaceRepository\CategorieRepository;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
 use Twig\Error\SyntaxError;
@@ -22,5 +22,4 @@ final class HomeController extends AbstractController
     {
         echo $this->twig->render('HomeView.html.twig', ['user' => false]);
     }
-
 }

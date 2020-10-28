@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Repository;
+namespace App\InterfaceRepository;
 
 use App\Entites\Categorie;
 
-interface CategoriesRepository
+interface CategoriesInterfaceRepository
 {
     public function add(Categorie $categorie);
     public function findAll(): array;

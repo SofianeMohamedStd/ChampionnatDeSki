@@ -472,6 +472,86 @@
         ]
     },
     {
+        "name": "league/csv",
+        "version": "9.6.1",
+        "version_normalized": "9.6.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/thephpleague/csv.git",
+            "reference": "634322df4aed210fdfbb7c94e434dc860da733d9"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/thephpleague/csv/zipball/634322df4aed210fdfbb7c94e434dc860da733d9",
+            "reference": "634322df4aed210fdfbb7c94e434dc860da733d9",
+            "shasum": ""
+        },
+        "require": {
+            "ext-json": "*",
+            "ext-mbstring": "*",
+            "php": "^7.2.5"
+        },
+        "require-dev": {
+            "ext-curl": "*",
+            "ext-dom": "*",
+            "friendsofphp/php-cs-fixer": "^2.16",
+            "phpstan/phpstan": "^0.12.0",
+            "phpstan/phpstan-phpunit": "^0.12.0",
+            "phpstan/phpstan-strict-rules": "^0.12.0",
+            "phpunit/phpunit": "^8.5"
+        },
+        "suggest": {
+            "ext-dom": "Required to use the XMLConverter and or the HTMLConverter classes",
+            "ext-iconv": "Needed to ease transcoding CSV using iconv stream filters"
+        },
+        "time": "2020-09-05T08:40:12+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "9.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "League\\Csv\\": "src"
+            },
+            "files": [
+                "src/functions_include.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Ignace Nyamagana Butera",
+                "email": "nyamsprod@gmail.com",
+                "homepage": "https://github.com/nyamsprod/",
+                "role": "Developer"
+            }
+        ],
+        "description": "CSV data manipulation made easy in PHP",
+        "homepage": "http://csv.thephpleague.com",
+        "keywords": [
+            "convert",
+            "csv",
+            "export",
+            "filter",
+            "import",
+            "read",
+            "transform",
+            "write"
+        ],
+        "funding": [
+            {
+                "url": "https://github.com/sponsors/nyamsprod",
+                "type": "github"
+            }
+        ]
+    },
+    {
         "name": "myclabs/deep-copy",
         "version": "1.10.1",
         "version_normalized": "1.10.1.0",
@@ -4023,6 +4103,183 @@
         ],
         "description": "Symfony Process Component",
         "homepage": "https://symfony.com",
+        "funding": [
+            {
+                "url": "https://symfony.com/sponsor",
+                "type": "custom"
+            },
+            {
+                "url": "https://github.com/fabpot",
+                "type": "github"
+            },
+            {
+                "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                "type": "tidelift"
+            }
+        ]
+    },
+    {
+        "name": "symfony/property-access",
+        "version": "v5.1.7",
+        "version_normalized": "5.1.7.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/property-access.git",
+            "reference": "4c43f7ff784e1e3ee1c96e15f76b342af6617b39"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/property-access/zipball/4c43f7ff784e1e3ee1c96e15f76b342af6617b39",
+            "reference": "4c43f7ff784e1e3ee1c96e15f76b342af6617b39",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.2.5",
+            "symfony/polyfill-php80": "^1.15",
+            "symfony/property-info": "^5.1.1"
+        },
+        "require-dev": {
+            "symfony/cache": "^4.4|^5.0"
+        },
+        "suggest": {
+            "psr/cache-implementation": "To cache access methods."
+        },
+        "time": "2020-09-02T16:23:27+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "5.1-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\PropertyAccess\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony PropertyAccess Component",
+        "homepage": "https://symfony.com",
+        "keywords": [
+            "access",
+            "array",
+            "extraction",
+            "index",
+            "injection",
+            "object",
+            "property",
+            "property path",
+            "reflection"
+        ],
+        "funding": [
+            {
+                "url": "https://symfony.com/sponsor",
+                "type": "custom"
+            },
+            {
+                "url": "https://github.com/fabpot",
+                "type": "github"
+            },
+            {
+                "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                "type": "tidelift"
+            }
+        ]
+    },
+    {
+        "name": "symfony/property-info",
+        "version": "v5.1.7",
+        "version_normalized": "5.1.7.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/property-info.git",
+            "reference": "22518930091e0bdb249694efc509e3697f7e325e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/property-info/zipball/22518930091e0bdb249694efc509e3697f7e325e",
+            "reference": "22518930091e0bdb249694efc509e3697f7e325e",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.2.5",
+            "symfony/polyfill-php80": "^1.15",
+            "symfony/string": "^5.1"
+        },
+        "conflict": {
+            "phpdocumentor/reflection-docblock": "<3.2.2",
+            "phpdocumentor/type-resolver": "<0.3.0",
+            "symfony/dependency-injection": "<4.4"
+        },
+        "require-dev": {
+            "doctrine/annotations": "~1.7",
+            "phpdocumentor/reflection-docblock": "^3.0|^4.0|^5.0",
+            "symfony/cache": "^4.4|^5.0",
+            "symfony/dependency-injection": "^4.4|^5.0",
+            "symfony/serializer": "^4.4|^5.0"
+        },
+        "suggest": {
+            "phpdocumentor/reflection-docblock": "To use the PHPDoc",
+            "psr/cache-implementation": "To cache results",
+            "symfony/doctrine-bridge": "To use Doctrine metadata",
+            "symfony/serializer": "To use Serializer metadata"
+        },
+        "time": "2020-09-07T05:10:28+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "5.1-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\PropertyInfo\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Kévin Dunglas",
+                "email": "dunglas@gmail.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Property Info Component",
+        "homepage": "https://symfony.com",
+        "keywords": [
+            "doctrine",
+            "phpdoc",
+            "property",
+            "symfony",
+            "type",
+            "validator"
+        ],
         "funding": [
             {
                 "url": "https://symfony.com/sponsor",

@@ -3,18 +3,18 @@
 namespace App\Controllers;
 
 use App\Entites\Profil;
-use App\Models\Profiles;
+use App\Models\ProfilesRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class ProfilsController extends AbstractController
 {
 
-    private Profiles $Profil;
+    private ProfilesRepository $Profil;
     public function __construct()
     {
         $this->twig = parent::getTwig();
-        $this->Profil = new Profiles();
+        $this->Profil = new ProfilesRepository();
     }
 
     public function showProfils(): void

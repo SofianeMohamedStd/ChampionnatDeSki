@@ -8,3 +8,45 @@ home:
 category:
     path: /categorie
     controller: App\Controllers\CategoriesController::showCategorie
+category_add:
+    path: /categorie/add
+    controller: App\Controllers\CategoriesController::categorieAdd   
+profil:
+    path: /profil
+    controller: App\Controllers\ProfilsController::showProfils
+profil_add:
+    path: /profil/add
+    controller: App\Controllers\ProfilsController::profilAdd
+epreuve:
+    path: /epreuve
+    controller: App\Controllers\EpreuvesController::showEpreuve
+epreuve_add:
+    path: /epreuve/add
+    controller: App\Controllers\EpreuvesController::epreuveAdd
+epreuve_listparticipants:
+    path: /epreuve/{id}
+    controller: App\Controllers\EpreuvesController::listParticipantEpreuve
+Epreuveparticipant_export:
+    path: /epreuve/export/{id}
+    controller: App\Controllers\EpreuvesController::exportCustomersDataCsvAction
+participant:
+    path: /participant
+    controller: App\Controllers\ParticipantsController::participantPage
+participant_addPage:
+    path: /participant/addpage
+    controller: App\Controllers\ParticipantsController::participantAddPage
+participant_add:
+    path: /participant/add
+    controller: App\Controllers\ParticipantsController::participantAdd
+participant_show:
+    path: /participant/participantshow
+    controller: App\Controllers\ParticipantsController::showParticipant
+participant_import:
+    path: /participant/import
+    controller: App\Controllers\ParticipantsController::deserializeFromCsv2
+classement_view:
+    path: /classement
+    controller: App\Controllers\ClassementController::classementPage
+classement_importParticipant:
+    path: /importparticipant
+    controller: App\Controllers\ClassementController::deserializeFromCsv

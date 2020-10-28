@@ -1,0 +1,88 @@
+{% extends 'template.html.twig' %}
+{% block title %}
+    Epreuves
+{% endblock %}
+
+{% block content %}
+    <div class="row mx-auto">
+        <div class="col-8 offset-2">
+            <h1>Ajout Participant</h1>
+        </div>
+        <div class="col-6 offset-3">
+            <form method="post" action="http://localhost/www/ChampionnatDeSki/participant/add" id="formAdd" class="">
+                <div class="form-group mt-2">
+
+                    <label for="name" class="text-left col-12">
+                        Nom : </label>
+                    <input class="form-control col-10" type="text" name="nom"
+                           id="nom" required minlength="2">
+                </div>
+                <div class="form-group mt-2">
+
+                    <label for="name" class="text-left col-12">
+                        Prenom : </label>
+                    <input class="form-control col-10" type="text" name="prenom"
+                           id="prenom" required minlength="2">
+                </div>
+                <div class="form-group mt-2">
+
+                    <label for="name" class="text-left col-12">
+                        Date de naissance : </label>
+                    <input class="form-control col-5" type="date" name="datenaissance"
+                           id="datenaissance" required minlength="2">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="name" class="text-left col-12">
+                        Email : </label>
+                    <input type="email" class="form-control col-10" name="email"
+                           id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+                <label for="name" class="text-left col-12">
+                    Categorie : </label>
+                <select class="form-control text-left col-5" name="categorie" id="categorie">
+                    {% for categorie in ListeCategories %}
+                        {% set selected = '' %}
+                        {% if (categorie.id ~ ' ' ~ categorie.NomCategorie) == user.ListeCategories %}
+                            {% set selected = 'selected' %}
+                        {% endif %}
+                        <option value="{{categorie.id}}" {{ selected }}>{{categorie.id}} {{categorie.NomCategorie}}</option>
+                    {% endfor %}
+                </select>
+                <label for="name" class="text-left col-12">
+                    Profil : </label>
+                <select class="form-control text-left col-5" name="profil" id="profil">
+                    {% for profil in ListeProfils %}
+                        {% set selected = '' %}
+                        {% if (profil.id ~ ' ' ~ profil.NomProfil) == user.ListeProfils %}
+                            {% set selected = 'selected' %}
+                        {% endif %}
+                        <option value="{{profil.id}}" {{ selected }}>{{profil.id}} {{profil.NomProfil}}</option>
+                    {% endfor %}
+                </select>
+                <label for="name" class="text-left col-12">
+                    Epreuve : </label>
+                <select class="form-control text-left col-5" name="epreuve" id="epreuve">
+                    {% for epreuve in ListeEpreuves %}
+                        {% set selected = '' %}
+                        {% if (epreuve.id ~ ' ' ~ epreuve.lieu) == user.ListeEpreuves %}
+                            {% set selected = 'selected' %}
+                        {% endif %}
+                        <option value="{{epreuve.id}}" {{ selected }}>{{epreuve.id}} {{epreuve.lieu}}</option>
+                    {% endfor %}
+                </select>
+                <div class="form-group mt-2">
+                    <label for="name" class="text-left col-12">
+                        Photo : </label>
+                    <div class="form-control text-left col-5">
+                        <input type="file" class="custom-file-input" name="photo" id="photo"
+                               aria-describedby="photo">
+                        <label class="custom-file-label" for="photo">Choose file</label>
+                    </div>
+                </div>
+                <input type="submit" class="btn btn-success" value="Valider" />
+            </form>
+        </div>
+    </div>
+    </div>
+    </div>
+{% endblock %}

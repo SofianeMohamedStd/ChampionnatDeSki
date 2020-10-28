@@ -2,10 +2,11 @@
 
 namespace App\Models;
 
-use App\Repository\CategoriesRepository;
+use App\Factory\CategoriesFactory;
+use App\InterfaceRepository\CategoriesInterfaceRepository;
 use App\Entites\Categorie;
 
-class Categories extends AbstractModel implements CategoriesRepository
+class CategoriesRepository extends AbstractModel implements CategoriesInterfaceRepository
 {
 
     public function __construct()
@@ -27,15 +28,15 @@ class Categories extends AbstractModel implements CategoriesRepository
         $req = $this->pdo->prepare('SELECT * FROM categories');
         $req->execute();
 
-        return $req->fetchAll();
+        return CategoriesFactory::arrayDbCollection($req->fetchAll());
     }
 
-    public function find(int $categorie): array
+    public function find(int $categorie): object
     {
         $req = $this->pdo->prepare('SELECT * FROM categories WHERE id = ?');
         $req->execute(array($categorie));
 
-        return $req->fetchAll();
+        return CategoriesFactory::dbCollection($req->fetch());
     }
 
     public function findbyName(Categorie $categorie): array
@@ -44,6 +45,6 @@ class Categories extends AbstractModel implements CategoriesRepository
         FROM categories WHERE nom_categorie = ?');
         $req->execute(array($categorie->getNomCategorie()));
 
-        return $req->fetchAll();
+        return CategoriesFactory::arrayDbCollection($req->fetchAll());
     }
 }

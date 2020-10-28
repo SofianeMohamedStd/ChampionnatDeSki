@@ -4,7 +4,7 @@ namespace App\InterfaceRepository;
 
 use App\Entites\Passage;
 
-interface PassageInterfaceRepository 
+interface PassageInterfaceRepository
 {
-    public function add(Passage $passage);
+    public function addListePassage(Passage $passage);
 }

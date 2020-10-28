@@ -3,9 +3,10 @@
 namespace App\Models;
 
 use App\Entites\Profil;
-use App\Repository\ProfilsRepository;
+use App\Factory\ProfilsFactory;
+use App\InterfaceRepository\ProfilsInterfaceRepository;
 
-class Profiles extends AbstractModel implements ProfilsRepository
+class ProfilesRepository extends AbstractModel implements ProfilsInterfaceRepository
 {
     
 
@@ -27,15 +28,15 @@ class Profiles extends AbstractModel implements ProfilsRepository
         $req = $this->pdo->prepare('SELECT * FROM profils');
         $req->execute();
 
-        return $req->fetchAll();
+        return ProfilsFactory::arrayDbCollection($req->fetchAll());
     }
 
-    public function find(int $profil): array
+    public function find(int $profil): object
     {
         $req = $this->pdo->prepare('SELECT * FROM profils WHERE id = ?');
         $req->execute(array($profil));
 
-        return $req->fetchAll();
+        return ProfilsFactory::dbCollection($req->fetch());
     }
 
     public function findbyName(Profil $profil): array
@@ -44,6 +45,6 @@ class Profiles extends AbstractModel implements ProfilsRepository
         FROM profils WHERE nom_profil = ?');
         $req->execute(array($profil->getNomProfil()));
 
-        return $req->fetchAll();
+        return ProfilsFactory::arrayDbCollection($req->fetchAll());
     }
 }

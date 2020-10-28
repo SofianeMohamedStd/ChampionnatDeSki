@@ -3,9 +3,10 @@
 namespace App\Models;
 
 use App\Entites\Epreuve;
-use App\Repository\EpreuvesRepository;
+use App\Factory\EpreuvesFactory;
+use App\InterfaceRepository\EpreuvesInterfaceRepository;
 
-class Epreuves extends AbstractModel implements EpreuvesRepository
+class EpreuvesRepository extends AbstractModel implements EpreuvesInterfaceRepository
 {
 
     public function __construct()
@@ -27,15 +28,15 @@ class Epreuves extends AbstractModel implements EpreuvesRepository
         $req = $this->pdo->prepare('SELECT * FROM epreuves');
         $req->execute();
 
-        return $req->fetchAll();
+        return $req->fetchAll ();
     }
 
-    public function find(int $epreuve)
+    public function find(int $epreuve):object
     {
         $req = $this->pdo->prepare('SELECT * FROM epreuves WHERE id = ?');
         $req->execute(array($epreuve));
 
-        return $req->fetchAll();
+        return EpreuvesFactory::dbCollection ($req->fetch ());
     }
 
     public function findbyName(Epreuve $epreuve): array
@@ -44,6 +45,42 @@ class Epreuves extends AbstractModel implements EpreuvesRepository
         FROM epreuves WHERE lieu = ?');
         $req->execute(array($epreuve->getLieu()));
 
-        return $req->fetchAll();
+        return EpreuvesFactory::arrayDbCollection ($req->fetchAll ());
+    }
+    public function findparticipantbyEpreuve($id)
+    {
+        $req = $this->pdo->prepare('SELECT epreuves_participants.*, categories.*,profils.*,participants.*
+FROM epreuves_participants 
+INNER JOIN participants ON 
+epreuves_participants.participants_id = participants.id 
+INNER JOIN epreuves ON 
+epreuves_participants.epreuves_id = epreuves.id 
+INNER JOIN categories ON
+participants.categorie_id = categories.id
+INNER JOIN profils ON
+participants.profil_id = profils.id
+WHERE epreuves.id= ? ');
+        $req->execute (array($id));
+
+        return $req->fetchAll ();
+
+    }
+    public function findparticipantByEpreuveForCSV($id)
+    {
+        $req = $this->pdo->prepare('SELECT epreuves_participants.participants_id,categories.nom_categorie,participants.nom,participants.prenom
+FROM epreuves_participants 
+INNER JOIN participants ON 
+epreuves_participants.participants_id = participants.id 
+INNER JOIN epreuves ON 
+epreuves_participants.epreuves_id = epreuves.id 
+INNER JOIN categories ON
+participants.categorie_id = categories.id
+INNER JOIN profils ON
+participants.profil_id = profils.id
+WHERE epreuves.id= ? ');
+        $req->execute (array($id));
+
+        return EpreuvesFactory::arrayDbCollectionCSV ($req->fetchAll ()) ;
+
     }
 }

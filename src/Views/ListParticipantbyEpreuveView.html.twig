@@ -1,0 +1,62 @@
+{% extends 'template.html.twig' %}
+{% block title %}
+    show list participant
+{% endblock %}
+
+{% block content %}
+    <div class="row mx-auto">
+    <div class="col-8 offset-2">
+        <h1>show Participants</h1>
+    </div>
+    {% if Listeepreuves|length != 0 %}
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">nom</th>
+                <th scope="col">prenom</th>
+                <th scope="col">categorie</th>
+                <th scope="col">profil</th>
+                <th scope="col">epreuve</th>
+
+
+            </tr>
+
+            {% for participant in Listeepreuves %}
+            <div class="col-6 offset-3">
+                <form action="http://localhost/www/ChampionnatDeSki/epreuve/export/{{ participant.epreuves_id}}" method="post"
+                      name="frmCSVImport" id="frmCSVImport" class="form-horizontal">
+                    <input type="submit" class="btn btn-success" value="Valider" />
+                </form>
+            </div>
+            <tbody>
+            <tr>
+                <th scope="row">{{ participant.participants_id }}</th>
+                <td>{{ participant.nom }}</td>
+                <td>{{ participant.prenom }}</td>
+                <td>{{ participant.nom_categorie }}</td>
+                <td>{{ participant.nom_profil }}</td>
+                <td>{{ participant.epreuves_id }}</td>
+            </tr>
+            </tbody>
+            {% endfor %}
+            </thead>
+        </table>
+        <div class="col-6 offset-3">
+            <form method="post" enctype="multipart/form-data" action="http://localhost/www/ChampionnatDeSki/epreuve/importdata">
+                <div class="form-inline mt-2">
+                    <label for="file" class="col-1 text-right "></label>
+                    <input class="btn btn-success col-4" type="file" name="file"
+                           id="file" required minlength="4" value="Import" />
+
+                    <input type="submit" class="btn btn-success col-4 offset-3"
+                           value="Télécharger" />
+                </div>
+
+            </form>
+        </div>
+
+    {% else %}
+        hi
+    {% endif %}
+{% endblock %}

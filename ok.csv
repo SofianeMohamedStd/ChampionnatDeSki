@@ -1,2 +1,4 @@
- participant_id,nom,prenom,categorie,temps_passage1,temps_passage2
-1,namoune,sofiane,test2
+idParticipant,time1,time2
+1,00:01:10.20,00:01:10.20
+2,00:01:10.20,00:01:10.20
+3,00:01:10.20,00:01:10.20

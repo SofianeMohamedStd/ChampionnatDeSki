@@ -1,0 +1,49 @@
+{% extends 'template.html.twig' %}
+{% block title %}
+    Participant
+{% endblock %}
+
+{% block content %}
+    <body>
+    <section class="jumbotron text-center mt-5">
+        <div class="album py-4 bg-light">
+            <div class="container mt-5">
+
+                <div class="row justify-content-around">
+                    <div class="col-md-4 ">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img src="http://localhost/www/ChampionnatDeSki/assets/img/ParticipantL.png" alt="Avatar" style="width:300px;height:300px;">
+                                </div>
+                                <div class="flip-card-back">
+                                    <h1>Description</h1>
+                                    <p>Vérifier la listes de vos participants selon une epreuve</p>
+                                    <a class="btn btn-outline-secondary" href="http://localhost/www/ChampionnatDeSki/participant/participantshow" role="button">Consulter</a>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img src="http://localhost/www/ChampionnatDeSki/assets/img/AjoutP.png" alt="Avatar" style="width:300px;height:300px;">
+                                </div>
+                                <div class="flip-card-back">
+                                    <h1>Description</h1>
+                                    <p>ajouter un participant selon l'epreuve choisi</p>
+                                    <a class="btn btn-outline-secondary" href="http://localhost/www/ChampionnatDeSki/participant/addpage" role="button">Ajouter</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </body>
+{% endblock %}

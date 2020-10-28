@@ -46,4 +46,12 @@ class Categorie
         }
         return $this;
     }
+    public function buildFromTableCategorie(array $dataCategorie): self
+    {
+        $this->id = $dataCategorie['id'];
+        $this->NomCategorie = $dataCategorie['nom_categorie'];
+
+        return $this;
+    }
+
 }

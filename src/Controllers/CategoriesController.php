@@ -2,20 +2,21 @@
 
 namespace App\Controllers;
 
-use App\Models\Categories;
-use Twig\Environment;
+use App\Entites\Categorie;
+use App\Models\CategoriesRepository;
 use Twig\Error\LoaderError;
-use Twig\Error\RuntimeError;
 use Twig\Error\SyntaxError;
-use Twig\Loader\FilesystemLoader;
+use Twig\Error\RuntimeError;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class CategoriesController extends AbstractController
 {
-    private Categories $Category;
+    private CategoriesRepository $Category;
     public function __construct()
     {
         $this->twig = parent::getTwig();
-        $this->Category = new Categories();
+        $this->Category = new CategoriesRepository();
     }
 
     public function showCategorie(): void
@@ -29,4 +30,19 @@ class CategoriesController extends AbstractController
         } catch (SyntaxError $e) {
         }
     }
+    public function categorieAdd(): void
+    {
+        $request = Request::createFromGlobals();
+        $name = $request->get('name');
+        $newCategories = new Categorie();
+        $newCategories->setNomCategorie($name);
+        $checkCategorie = $this->Category->findbyName($newCategories);
+        if (empty($checkCategorie)) {
+            $addCategory = $this->Category->add($newCategories);
+        }
+        $response = new RedirectResponse('http://localhost/www/ChampionnatDeSki/categorie');
+        $response->send();
+    }
+
+
 }

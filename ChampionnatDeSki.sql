@@ -45,18 +45,11 @@ CREATE TABLE `epreuves_participants` (
 
 CREATE TABLE `passage` (
   `id` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
-  `num_passage` int(11) NOT NULL,
-  `temps` time
+  `participants_id` int(11) NOT NULL,
+  `temps_passage_1` time ,
+  `temps_passage_2` time,
+  CONSTRAINT fk_participants_id_id
+        FOREIGN KEY (participants_id)
+        REFERENCES Participants(id)
 ) ENGINE=InnoDB;
 
-CREATE TABLE `passage_participants` (
-  `passage_id` int(11) NOT NULL,
-  `participants_id` int(11) NOT NULL,
-  PRIMARY KEY (`passage_id`,`participants_id`),
-  CONSTRAINT fk_passage_id          
-        FOREIGN KEY (passage_id)             
-        REFERENCES Passage(id),        
-  CONSTRAINT fk_participants_id_id          
-        FOREIGN KEY (participants_id)             
-        REFERENCES Participants(id)       
-) ENGINE=InnoDB;

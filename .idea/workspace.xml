@@ -20,13 +20,88 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88fbb36d-61f8-48bf-8eda-7a505acca904" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controllers/ErrorController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/learn-github-actions.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/learn-github-actions.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.phpunit.result.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.phpunit.result.cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ok.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controllers/ClassementController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Factory/PassagesFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/InterfaceRepository/PassageInterfaceRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Models/PassagesRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Views/ClassementView.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Views/ListParticipantbyEpreuveView.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/csv/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/csv/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/csv/autoload.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/csv/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/csv/src/AbstractCsv.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/csv/src/ByteSequence.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/csv/src/CannotInsertRecord.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/csv/src/CharsetConverter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/csv/src/ColumnConsistency.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/csv/src/EncloseField.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/csv/src/EscapeFormula.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/csv/src/Exception.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/csv/src/HTMLConverter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/csv/src/InvalidArgument.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/csv/src/MapIterator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/csv/src/Polyfill/EmptyEscapeParser.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/csv/src/RFC4180Field.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/csv/src/Reader.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/csv/src/ResultSet.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/csv/src/Statement.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/csv/src/Stream.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/csv/src/SyntaxError.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/csv/src/TabularDataReader.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/csv/src/UnavailableFeature.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/csv/src/Writer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/csv/src/XMLConverter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/csv/src/functions.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/csv/src/functions_include.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ChampionnatDeSki.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ChampionnatDeSki.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChampionnatDeSki.sql" beforeDir="false" afterPath="$PROJECT_DIR$/ChampionnatDeSki.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/TestsEntites/CategoriesTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/TestsEntites/CategoriesTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/TestsModels/ParticipantsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/TestsModels/ParticipantsTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/AbstractController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AbstractController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/CategoriesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/CategoriesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/EpreuvesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/EpreuvesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/ErrorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ErrorController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/ParticipantsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ParticipantsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/ProfilsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ProfilsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entites/Categorie.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entites/Categorie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entites/Epreuve.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entites/Epreuve.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entites/Participant.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entites/Participant.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entites/Passage.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entites/Passage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entites/Profil.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entites/Profil.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Factory/CategoriesFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Factory/CategoriesFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Factory/EpreuvesFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Factory/EpreuvesFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Factory/ParticipantsFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Factory/ParticipantsFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Factory/ProfilsFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Factory/ProfilsFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfaceRepository/CategoriesInterfaceRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/InterfaceRepository/CategoriesInterfaceRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfaceRepository/EpreuvesInterfaceRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/InterfaceRepository/EpreuvesInterfaceRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfaceRepository/ParticipantsInterfaceRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/InterfaceRepository/ParticipantsInterfaceRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfaceRepository/ProfilsInterfaceRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/InterfaceRepository/ProfilsInterfaceRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/AbstractModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/AbstractModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/CategoriesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/CategoriesRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/EpreuvesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/EpreuvesRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/ParticipantsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/ParticipantsRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/ProfilesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/ProfilesRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/CategorieView.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/CategorieView.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/EpreuveView.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/EpreuveView.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/HomeView.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/HomeView.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/ParticipantAddView.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/ParticipantAddView.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/ParticipantShowView.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/ParticipantShowView.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/ParticipantView.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/ParticipantView.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/template.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/template.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +116,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PHPCodeSnifferBlackList">
+    <option name="filePaths">
+      <option value="$PROJECT_DIR$/src/Models/EpreuvesRepository.php" />
+    </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -120,6 +200,9 @@
       <path value="$PROJECT_DIR$/vendor/symfony/translation" />
       <path value="$PROJECT_DIR$/vendor/symfony/serializer" />
       <path value="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer" />
+      <path value="$PROJECT_DIR$/vendor/league/csv" />
+      <path value="$PROJECT_DIR$/vendor/symfony/property-info" />
+      <path value="$PROJECT_DIR$/vendor/symfony/property-access" />
     </include_path>
   </component>
   <component name="ProjectId" id="1ilpMgJOaFarwCbIQ18Fn01dnV7" />
@@ -167,6 +250,15 @@
       <workItem from="1603111292649" duration="17299000" />
       <workItem from="1603196436620" duration="18232000" />
       <workItem from="1603275078509" duration="1237000" />
+      <workItem from="1603359559757" duration="11448000" />
+      <workItem from="1603385760145" duration="4279000" />
+      <workItem from="1603435209867" duration="27570000" />
+      <workItem from="1603624533565" duration="15226000" />
+      <workItem from="1603640712256" duration="8872000" />
+      <workItem from="1603719017632" duration="16576000" />
+      <workItem from="1603784702140" duration="32374000" />
+      <workItem from="1603872315885" duration="16899000" />
+      <workItem from="1603890539367" duration="6128000" />
     </task>
     <servers />
   </component>
@@ -189,41 +281,65 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="395" y="91" key="#Inspections" timestamp="1603699244176">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="395" y="91" key="#Inspections/0.0.1536.824@0.0.1536.824" timestamp="1603699244176" />
     <state x="349" y="67" key="#PHP_CodeSniffer" timestamp="1603275361947">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="349" y="67" key="#PHP_CodeSniffer/0.0.1536.824@0.0.1536.824" timestamp="1603275361947" />
+    <state x="194" y="254" key="#SQL_Dialects" timestamp="1603629597224">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="194" y="254" key="#SQL_Dialects/0.0.1536.824@0.0.1536.824" timestamp="1603629597224" />
     <state x="349" y="67" key="#Test_Frameworks" timestamp="1603275356823">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="349" y="67" key="#Test_Frameworks/0.0.1536.824@0.0.1536.824" timestamp="1603275356823" />
-    <state x="574" y="94" key="#com.intellij.ide.util.MemberChooser" timestamp="1603197238820">
+    <state x="475" y="214" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603807143470">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="94" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1603197238820" />
-    <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1603261693266">
+    <state x="475" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1603807143470" />
+    <state x="574" y="94" key="#com.intellij.ide.util.MemberChooser" timestamp="1603746719617">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1603261693266" />
-    <state x="498" y="30" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603115144885">
+    <state x="574" y="94" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1603746719617" />
+    <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1603385779289">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="498" y="30" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1603115144885" />
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603263475991">
+    <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1603385779289" />
+    <state x="498" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603387236689">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1603263475991" />
+    <state x="498" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1603387236689" />
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603881622232">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1603881622232" />
     <state x="545" y="325" key="ComposerInitDialogKey" timestamp="1603275315909">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="545" y="325" key="ComposerInitDialogKey/0.0.1536.824@0.0.1536.824" timestamp="1603275315909" />
-    <state x="528" y="135" key="NewPhpClassDialog" timestamp="1603263461567">
+    <state x="528" y="135" key="NewPhpClassDialog" timestamp="1603878165812">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="528" y="135" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1603263461567" />
+    <state x="528" y="135" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1603878165812" />
     <state x="458" y="115" key="SettingsEditor" timestamp="1603275751268">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="458" y="115" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1603275751268" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1603742140442">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1603742140442" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1603438955969">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1603438955969" />
+    <state x="430" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1603881850175">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="430" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1603881850175" />
   </component>
 </project>

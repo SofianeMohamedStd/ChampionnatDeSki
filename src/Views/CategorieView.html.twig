@@ -9,6 +9,22 @@
             <h1>Categories</h1>
         </div>
     </div>
+
+    <div class="col-6 offset-3">
+            <form method="post" action="http://localhost/www/ChampionnatDeSki/categorie/add" id="formAdd" class="">
+            <div class="form-group mt-2">
+                            
+                            <label for="name" class="text-left col-10">
+                                Nouveau nom : </label>
+                            <input class="form-control col-10" type="text" name="name"
+                            id="" required minlength="2">
+            </div>
+            <input type="submit" class="btn btn-success" value="Valider" />
+            </form>
+        </div>
+        </div>
+    </div>
+</div>
     {% if Listecategories|length != 0 %}
     <table class="table table-bordered">
                         <thead>
@@ -17,9 +33,9 @@
                             <th scope="col">Categorie</th>
                             <th scope="col">Actions</th>
                         </tr>
-                        </thead>
-                        <tbody>
+                        
                         {% for categorie in Listecategories %}
+                        <tbody>
                             <tr>
                                 <th scope="row">{{ categorie.id }}</th>
                                 <td>{{ categorie.nom_categorie }}</td>
@@ -29,8 +45,9 @@
                                 </td>
                             </tr>
                             </tbody>
-                            </table>
                         {% endfor %}
+                         </thead>
+                            </table>
     {% else %}
         hi
     {% endif %}

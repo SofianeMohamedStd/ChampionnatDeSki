@@ -1,0 +1,24 @@
+{% extends 'template.html.twig' %}
+{% block title %}
+    Classement
+{% endblock %}
+
+{% block content %}
+    <div class="row mx-auto">
+    <div class="col-8 offset-2">
+        <h1>Classement</h1>
+    </div>
+        <div class="col-6 offset-3">
+            <form method="post" enctype="multipart/form-data" action="http://localhost/www/ChampionnatDeSki/importparticipant">
+                <div class="form-inline mt-2">
+                    <label for="file" class="col-1 text-right "></label>
+                    <input class="btn btn-success col-4" type="file" name="file"
+                           id="file" required minlength="4" value="Import" />
+
+                    <input type="submit" class="btn btn-success col-4 offset-3"
+                           value="Télécharger" />
+                </div>
+
+            </form>
+        </div>
+{% endblock %}

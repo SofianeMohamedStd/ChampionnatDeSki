@@ -37,16 +37,31 @@ class Participant
      * @var int
      */
     private int $ProfilID;
+    /**
+     * @var int
+     */
+    private int $EpreuveID;
 
     /**
      * @var DateTimeInterface
      */
-    private DateTimeInterface $DateNaissance;
+    private DateTimeInterface $Date;
 
     /**
      * @var string
      */
     private string $Photo;
+
+    private string $categories;
+
+    private string $profils;
+
+    private int $idParticipant;
+
+    private ?DateTimeInterface $time1;
+
+    private ?DateTimeInterface $time2;
+
 
     /**
      * @return int
@@ -54,6 +69,12 @@ class Participant
     public function getId(): ?int
     {
         return $this->Id;
+    }
+
+    public function setId($id): self
+    {
+        $this->Id = $id;
+        return $this;
     }
 
     /**
@@ -163,26 +184,43 @@ class Participant
     }
 
     /**
-     * @return DateTimeInterface
+     * @return int
      */
-    public function getDateNaissance(): ?DateTimeInterface
+    public function getEpreuveID(): ?int
     {
-        return $this->DateNaissance;
+        return $this->EpreuveID;
     }
 
     /**
-     * @param string $DateNaissance
+     * @param int $EpreuveID
+     * @throws Exception
+     */
+    public function setEpreuveID(int $EpreuveID)
+    {
+        if (! is_int($EpreuveID) || ($EpreuveID <= 0)) {
+            throw new Exception('Epreuve invalide');
+        }
+        $this->EpreuveID = $EpreuveID;
+    }
+
+    public function getDate(): ?DateTimeInterface
+    {
+        return $this->Date;
+    }
+
+    /**
+     * @param String $Date
      * @return Participant
      * @throws Exception
      */
-    public function setDateNaissance(string $DateNaissance): self
+    public function setDate(string $Date): self
     {
-        if (! preg_match("/^(((0[1-9])|(1\d)|(2\d)|(3[0-1]))\/((0[1-9])|(1[0-2]))\/(\d{4}))$/", $DateNaissance)) {
+        if (! preg_match('/^\d{4}(\-)(((0)[0-9])|((1)[0-2]))(\-)([0-2][0-9]|(3)[0-1])$/', $Date)) {
             throw new Exception('date invalide');
-        } else {
-            $dateL = DateTime::createFromFormat('d/m/Y', $DateNaissance);
-            $this->DateNaissance = $dateL;
         }
+        $Date = DateTime::createFromFormat('Y-m-d', $Date);
+        $this->Date = $Date;
+
         return $this;
     }
 
@@ -205,4 +243,85 @@ class Participant
         }
         $this->Photo = $Photo;
     }
+
+    public function getcategories(): ?string
+    {
+        return $this->categories;
+    }
+    public function setprofils(string $profils): self
+    {
+            $this->profils = $profils;
+
+        return $this;
+    }
+    public function getprofils(): ?string
+    {
+        return $this->profils;
+    }
+
+    public function getidParticipant(): ?int
+    {
+        return $this->idParticipant;
+    }
+
+    public function setidParticipant($id): self
+    {
+        $this->idParticipant = $id;
+        return $this;
+    }
+
+    public function getTime1(): ?DateTimeInterface
+    {
+        return $this->time1;
+    }
+
+    public function setTime1(string $timeStage): self
+    {
+        $time = DateTime::createFromFormat('H:i:s', $timeStage);
+        $this->time1 = $time;
+
+        return $this;
+    }
+
+    public function getTime2(): ?DateTimeInterface
+    {
+        return $this->time2;
+    }
+
+    public function setTime2(string $timeStage): self
+    {
+        $time = DateTime::createFromFormat('H:i:s', $timeStage);
+        $this->time2 = $time;
+
+        return $this;
+    }
+
+    public function buildFromTableParticipant(array $dataParticipant): self
+    {
+
+        $this->Id = $dataParticipant['id'];
+        $this->Nom = $dataParticipant['nom'];
+        $this->Prenom = $dataParticipant['prenom'];
+        $this->Date = DateTime::createFromFormat('Y-m-d', $dataParticipant['date_de_naissance']);
+        $this->Email = $dataParticipant['email'];
+        $this->CategorieID = $dataParticipant['categorie_id'];
+        $this->ProfilID = $dataParticipant['profil_id'];
+        $this->Photo = $dataParticipant['photo'];
+        $this->categories = $dataParticipant['nom_categorie'];
+        $this->profils = $dataParticipant['nom_profil'];
+
+
+        return $this;
+    }
+
+    public function buildFromTableParticipantForCSV(array $dataParticipant): self
+    {
+        $this->Id = $dataParticipant['id'];
+        $this->Nom = $dataParticipant['nom'];
+        $this->Prenom = $dataParticipant['prenom'];
+        $this->CategorieID = $dataParticipant['categorie_id'];
+
+        return $this;
+    }
+
 }

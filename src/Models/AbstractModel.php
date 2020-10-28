@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models;
 
 use PDO;
@@ -19,7 +20,7 @@ abstract class AbstractModel
             try {
                 self::$_pdo  = new PDO('mysql:host=localhost;dbname=championnatdeski;', 'root', '');
             } catch (PDOException $e) {
-                die('Erreur : '.$e->getMessage());
+                die('Erreur : ' . $e->getMessage());
             }
         }
         return self::$_pdo;

@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controllers;
 
 use App\Controllers\AbstractController;
@@ -15,7 +16,4 @@ class ErrorController extends AbstractController
         $template = $this->twig->load($pageTwig);
         return new Response($template->render());
     }
-  
-   
-   
 }

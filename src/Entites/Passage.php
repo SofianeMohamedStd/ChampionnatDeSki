@@ -3,60 +3,81 @@
 namespace App\Entites;
 
 use DateTime;
-use Exception;
 use DateTimeInterface;
 
 class Passage
 {
-    /**
-     * @var int
-     */
     private int $id;
 
-    /**
-     * @var int
-     */
-    private int $NumPassage;
+    private int $idParticipant;
 
-    /**
-     * @var DateTimeInterface
-     */
-    private DateTimeInterface $TempDePassage;
+    private ?DateTimeInterface $time1;
+
+    private ?DateTimeInterface $time2;
+
+    private ?DateTimeInterface $moyenne;
 
 
-    public function getId(): int
+
+    public function getid(): ?int
     {
         return $this->id;
     }
 
-    public function getNumPassage(): int
+    public function setid($id): self
     {
-        return $this->NumPassage;
-    }
-    public function setNumPassage($NumPassage): self
-    {
-        if (! is_int($numPassage) || $NumPassage <= 0 || $numPassage > 2) {
-            throw new Exception('Numero passage invalide');
-        } else {
-            $this->NumPassage = $NumPassage;
-        }
+        $this->id = $id;
         return $this;
     }
 
-    public function getTempDePassage(): DateTimeInterface
+    public function getidParticipant(): ?int
     {
-        return $this->DateDePassage;
+        return $this->idParticipant;
     }
 
-    public function setTempDePassage(string $DateDePassage): self
+    public function setidParticipant($id): self
     {
-        if (! preg_match("/^([0-9]{1,2}:[0-5]{1}[0-9]{1}.[0-9]{1,3})$/", $DateDePassage)) {
-            throw new Exception('Date Invalide');
-        } else {
-            $date = DateTime::createFromFormat('i:s.u', $DateDePassage);
-            $this->DateDePassage = $date;
-    
-            return $this;
-        }
+        $this->idParticipant = $id;
+        return $this;
+    }
+
+    public function getTime1(): ?DateTimeInterface
+    {
+        return $this->time1;
+    }
+
+    public function setTime1(string $timeStage): self
+    {
+        $time = DateTime::createFromFormat('H:i:s.u', $timeStage);
+        $this->time1 = $time;
+
+        return $this;
+    }
+
+    public function getTime2(): ?DateTimeInterface
+    {
+        return $this->time2;
+    }
+
+    public function setTime2(string $timeStage): self
+    {
+        $time = DateTime::createFromFormat('H:i:s.u', $timeStage);
+        $this->time2 = $time;
+
+        return $this;
+    }
+
+    public function getResultat(): ?DateTimeInterface
+    {
+        return $this->moyenne;
+    }
+
+    public function setResultat(): self
+    {
+        $moyenne = ($this->getTime1() + $this->getTime2());
+        $time = DateTime::createFromFormat('H:i:s.u', $moyenne);
+        $this->moyenne = $moyenne;
+
+        return $this;
     }
 }
