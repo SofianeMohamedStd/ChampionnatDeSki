@@ -15,9 +15,6 @@ class Passage
 
     private ?DateTimeInterface $time2;
 
-    private ?DateTimeInterface $moyenne;
-
-
 
     public function getid(): ?int
     {
@@ -67,17 +64,5 @@ class Passage
         return $this;
     }
 
-    public function getResultat(): ?DateTimeInterface
-    {
-        return $this->moyenne;
-    }
 
-    public function setResultat(): self
-    {
-        $moyenne = ($this->getTime1() + $this->getTime2());
-        $time = DateTime::createFromFormat('H:i:s.u', $moyenne);
-        $this->moyenne = $moyenne;
-
-        return $this;
-    }
 }
