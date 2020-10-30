@@ -4,6 +4,7 @@
 {% endblock %}
 
 {% block content %}
+    <body>
     <div class="row mx-auto">
     <div class="col-8 offset-2">
         <h1>Classement</h1>
@@ -21,4 +22,61 @@
 
             </form>
         </div>
+    </div>
+    <section class="jumbotron text-center mt-5">
+        <div class="album py-4 bg-light">
+            <div class="container mt-5">
+
+                <div class="row justify-content-around">
+                    <div class="col-md-4 ">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img src="http://localhost/www/ChampionnatDeSki/assets/img/Cgeneral.png" alt="Avatar" style="width:300px;height:300px;">
+                                </div>
+                                <div class="flip-card-back">
+                                    <h1>Description</h1>
+                                    <p>le classement génerale de tout les participants</p>
+                                    <a class="btn btn-outline-secondary" href="http://localhost/www/ChampionnatDeSki/classement/classementgeneral" role="button">Consulter</a>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img src="http://localhost/www/ChampionnatDeSki/assets/img/ClassementParcategie.png" alt="Avatar" style="width:300px;height:300px;">
+                                </div>
+                                <div class="flip-card-back">
+                                    <h1>Description</h1>
+                                    <p>choisissez la categorie que vous voulez consulter son classement</p>
+                                    <div class="container">
+                                        <form method="post" action="http://localhost/www/ChampionnatDeSki/classement/categorie" id="formAdd" class="">
+                                        <div class="row justify-content-center">
+                                    <select class="form-control text-left col-5" name="categorie" id="categorie">
+                                        {% for categorie in ListeCategories %}
+                                            {% set selected = '' %}
+                                            {% if (categorie.id ~ ' ' ~ categorie.NomCategorie) == user.ListeCategories %}
+                                                {% set selected = 'selected' %}
+                                            {% endif %}
+                                            <option value="{{categorie.id}}" {{ selected }}>{{categorie.id}} {{categorie.NomCategorie}}</option>
+                                        {% endfor %}
+                                    </select>
+                                            <input type="submit" class="btn btn-success" value="Valider" />
+                                        </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </body>
 {% endblock %}

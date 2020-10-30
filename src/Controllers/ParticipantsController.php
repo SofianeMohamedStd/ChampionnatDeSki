@@ -18,7 +18,6 @@ use App\Models\CategoriesRepository;
 use App\Models\ParticipantsRepository;
 use Symfony\Component\HttpFoundation\Request;
 
-
 class ParticipantsController extends AbstractController
 {
     private ParticipantsRepository $participant;

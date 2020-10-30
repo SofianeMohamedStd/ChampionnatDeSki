@@ -53,5 +53,4 @@ class Categorie
 
         return $this;
     }
-
 }

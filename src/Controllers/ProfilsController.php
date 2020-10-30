@@ -42,6 +42,4 @@ class ProfilsController extends AbstractController
         $response = new RedirectResponse('http://localhost/www/ChampionnatDeSki/profil');
         $response->send();
     }
-
-    
 }

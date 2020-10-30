@@ -28,15 +28,15 @@ class EpreuvesRepository extends AbstractModel implements EpreuvesInterfaceRepos
         $req = $this->pdo->prepare('SELECT * FROM epreuves');
         $req->execute();
 
-        return $req->fetchAll ();
+        return $req->fetchAll();
     }
 
-    public function find(int $epreuve):object
+    public function find(int $epreuve): object
     {
         $req = $this->pdo->prepare('SELECT * FROM epreuves WHERE id = ?');
         $req->execute(array($epreuve));
 
-        return EpreuvesFactory::dbCollection ($req->fetch ());
+        return EpreuvesFactory::dbCollection($req->fetch());
     }
 
     public function findbyName(Epreuve $epreuve): array
@@ -45,7 +45,7 @@ class EpreuvesRepository extends AbstractModel implements EpreuvesInterfaceRepos
         FROM epreuves WHERE lieu = ?');
         $req->execute(array($epreuve->getLieu()));
 
-        return EpreuvesFactory::arrayDbCollection ($req->fetchAll ());
+        return EpreuvesFactory::arrayDbCollection($req->fetchAll());
     }
     public function findparticipantbyEpreuve($id)
     {
@@ -60,10 +60,9 @@ participants.categorie_id = categories.id
 INNER JOIN profils ON
 participants.profil_id = profils.id
 WHERE epreuves.id= ? ');
-        $req->execute (array($id));
+        $req->execute(array($id));
 
-        return $req->fetchAll ();
-
+        return $req->fetchAll();
     }
     public function findparticipantByEpreuveForCSV($id)
     {
@@ -78,9 +77,8 @@ participants.categorie_id = categories.id
 INNER JOIN profils ON
 participants.profil_id = profils.id
 WHERE epreuves.id= ? ');
-        $req->execute (array($id));
+        $req->execute(array($id));
 
-        return EpreuvesFactory::arrayDbCollectionCSV ($req->fetchAll ()) ;
-
+        return EpreuvesFactory::arrayDbCollectionCSV($req->fetchAll()) ;
     }
 }

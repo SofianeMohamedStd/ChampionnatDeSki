@@ -76,7 +76,7 @@ class EpreuvesController extends AbstractController
         $params = explode('/', $request->getPathInfo());
         $list = $this->Epreuves->findparticipantByEpreuveForCSV($params[3]);
         $fp = fopen('php://output', 'w', "w");
-        fputcsv($fp, array('participant_id,nom,prenom,categorie,temps_passage1,temps_passage2'), ';');
+        fputcsv($fp, array('idParticipant,nom,prenom,categorie,time1,time2'), ';');
         foreach ($list as $line) {
             fputcsv(
                 $fp, // The file pointer

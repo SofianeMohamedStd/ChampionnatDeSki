@@ -43,6 +43,4 @@ class CategoriesController extends AbstractController
         $response = new RedirectResponse('http://localhost/www/ChampionnatDeSki/categorie');
         $response->send();
     }
-
-
 }

@@ -1,5 +1,6 @@
- idParticipant,nom,prenom,categorie,time1,time2
-1,namoune,sofiane,test2
-6,ss,xx,test2
-7,ss,xx,test2
-8,ss,xx,test2
+idParticipant,nom,prenom,categorie,time1,time2
+1,namoune,sofiane,1,01:25:747,01:20:02
+6,ss,xx,test2,01:01:00,01:02:42
+7,ss,xx,test2,01:02:00,01:01:00
+8,ss,xx,test2,01:45:00,01:15:00
+9,ooooo,Sofiane,test3,01:45:00,01:15:00

@@ -50,3 +50,9 @@ classement_view:
 classement_importParticipant:
     path: /importparticipant
     controller: App\Controllers\ClassementController::deserializeFromCsv
+classement_general:
+    path: /classement/classementgeneral
+    controller: App\Controllers\ClassementController::classementGeneral
+classement_par_categorie:
+    path: classement/categorie
+    controller: App\Controllers\ClassementController::classementByCategorie
