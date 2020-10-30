@@ -107,7 +107,7 @@ class ClassementController extends AbstractController
         $IdCategorie = $request->get('categorie');
 
         $ClassementPremierCategorie = $this->Passage->firstorderByCategorie($IdCategorie);
-        $ClassementCategorie = $this->Passage->orderByCategorie ($IdCategorie);
+        $ClassementCategorie = $this->Passage->orderByCategorie($IdCategorie);
         try {
             echo $this -> twig -> render(
                 'ClassementByCategorieView.html.twig',
@@ -116,6 +116,27 @@ class ClassementController extends AbstractController
         } catch (LoaderError $e) {
         } catch (RuntimeError $e) {
         } catch (SyntaxError $e) {
+        }
+    }
+    public function classementByAge()
+    {
+        $request = Request::createFromGlobals();
+        $IdCategorie = $request->get('age');
+        if ($IdCategorie == 1) {
+            $ClassementParAge = $this->Passage->ordreByAgeFirstInterval();
+
+                echo $this -> twig -> render(
+                    'ClassementByCategorieView.html.twig',
+                    ['ListPremiers' => $ClassementParAge]
+                );
+        } elseif ($IdCategorie == 2) {
+            $ClassementParAge = $this->Passage->ordreByAgeSecondeInterval();
+
+
+            echo $this -> twig -> render(
+                'ClassementByCategorieView.html.twig',
+                ['ListPremiers' => $ClassementParAge]
+            );
         }
     }
 }

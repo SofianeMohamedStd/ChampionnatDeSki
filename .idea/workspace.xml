@@ -20,27 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88fbb36d-61f8-48bf-8eda-7a505acca904" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Views/ClassementByCategorieView.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/Age.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Views/ClassementByAgeView.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/Classement.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ok (2).csv" beforeDir="false" afterPath="$PROJECT_DIR$/ok (2).csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/CategoriesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/CategoriesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/ClassementController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ClassementController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/EpreuvesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/EpreuvesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/ParticipantsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ParticipantsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/ProfilsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ProfilsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entites/Categorie.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entites/Categorie.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entites/Participant.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entites/Participant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entites/Passage.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entites/Passage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InterfaceRepository/PassageInterfaceRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/InterfaceRepository/PassageInterfaceRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/EpreuvesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/EpreuvesRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Models/PassagesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/PassagesRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/CategorieView.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/CategorieView.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/ClassementGeneralView.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/ClassementGeneralView.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Views/ClassementView.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/ClassementView.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/HomeView.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/HomeView.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/ProfilView.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/ProfilView.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +191,7 @@
       <workItem from="1603957828382" duration="11366000" />
       <workItem from="1603973809798" duration="3150000" />
       <workItem from="1603977488132" duration="8243000" />
-      <workItem from="1604042776529" duration="8968000" />
+      <workItem from="1604042776529" duration="15100000" />
     </task>
     <servers />
   </component>

@@ -56,7 +56,8 @@
                                     <div class="container">
                                         <form method="post" action="http://localhost/www/ChampionnatDeSki/classement/categorie" id="formAdd" class="">
                                         <div class="row justify-content-center">
-                                    <select class="form-control text-left col-5" name="categorie" id="categorie">
+                                    <select class="browser-default custom-select" name="categorie" id="categorie">
+                                        <option selected>Selctionne Une categorie</option>
                                         {% for categorie in ListeCategories %}
                                             {% set selected = '' %}
                                             {% if (categorie.id ~ ' ' ~ categorie.NomCategorie) == user.ListeCategories %}
@@ -70,6 +71,34 @@
                                         </form>
                                     </div>
                                 </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 ">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img src="http://localhost/www/ChampionnatDeSki/assets/img/Age.png" alt="Avatar" style="width:300px;height:300px;">
+                                </div>
+                                <div class="flip-card-back">
+                                    <h1>Description</h1>
+                                    <p>le classement par ordre d'age</p>
+                                    <div class="container">
+                                        <form method="post" action="http://localhost/www/ChampionnatDeSki/classement/age" id="formAdd" class="">
+                                            <div class="row justify-content-center">
+                                    <select class="browser-default custom-select" name="age" id="age">
+                                        <option selected>Selctionne un intervalle d'age</option>
+                                        <option value="1">[18...30[</option>
+                                        <option value="2">[30...40[</option>
+                                        <option value="3">[40...50[</option>
+                                        <option value="4">[50...60]</option>
+                                    </select>
+                                                <input type="submit" class="btn btn-success" value="Valider" />
+                                </div>
+                                        </form>
+                                    </div>
+
 
                             </div>
                         </div>

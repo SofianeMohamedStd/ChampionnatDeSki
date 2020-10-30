@@ -1,0 +1,87 @@
+{% extends 'template.html.twig' %}
+{% block title %}
+    Classement par categorie
+{% endblock %}
+
+{% block content %}
+    <body>
+    <div class="row mx-auto">
+        <div class="col-8 offset-2">
+            <h1>Classement par categorie</h1>
+        </div>
+    </div>
+    {% if ListPremiers|length != 0 %}
+        <div class="album py-5 bg-light">
+            <div class="container">
+                <div class="row mx-auto">
+                    <div class="col-8 offset-2">
+                        <h1>Les Trois Premiers</h1>
+                    </div>
+                </div>
+                {% for participant in ListPremiers %}
+                <div class="container">
+                    <div class="row justify-content-around">
+                        <div class="col-md-4">
+                            <div class="card mb-4 shadow-sm">
+                                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+                                <div class="card-body">
+                                    <p class="card-text">Nom : {{ participant.nom }}</p>
+                                    <p class="card-text">Prenom : {{ participant.prenom }}</p>
+                                    <p class="card-text">premier passage : {{ participant.temps_passage_1 }}</p>
+                                    <p class="card-text">deuxième passage : {{ participant.temps_passage_2 }}</p>
+                                    <p class="card-text">resultat final : {{ participant.moyenne|date("i:s.u") }}</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="row mx-auto">
+            <div class="col-8 offset-2">
+                <h1>Classement Total</h1>
+            </div>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th scope="col">nom </th>
+                <th scope="col">prenom </th>
+                <th scope="col">premier passage </th>
+                <th scope="col">deuxième passage</th>
+                <th scope="col">resultat final</th>
+            </tr>
+
+            {% for participant in ListGeneral %}
+            <tbody>
+            <tr>
+                <td>{{ participant.nom }}</td>
+                <td>{{ participant.prenom }}</td>
+                <td>{{ participant.temps_passage_1 }}</td>
+                <td>{{ participant.temps_passage_2 }}</td>
+                <td>{{ participant.moyenne|date("i:s.u") }}</td>
+            </tr>
+            </tbody>
+            {% endfor %}
+            </thead>
+        </table>
+    {% else %}
+        <div class="col-6 offset-3">
+            <form method="post" enctype="multipart/form-data" action="http://localhost/www/ChampionnatDeSki/importparticipant">
+                <div class="form-inline mt-2">
+                    <label for="file" class="col-1 text-right "></label>
+                    <input class="btn btn-success col-4" type="file" name="file"
+                           id="file" required minlength="4" value="Import" />
+
+                    <input type="submit" class="btn btn-success col-4 offset-3"
+                           value="Télécharger" />
+                </div>
+
+            </form>
+        </div>
+    {% endif %}
+    </body>
+{% endblock %}

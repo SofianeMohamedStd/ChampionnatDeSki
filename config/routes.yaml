@@ -56,3 +56,6 @@ classement_general:
 classement_par_categorie:
     path: classement/categorie
     controller: App\Controllers\ClassementController::classementByCategorie
+classement_par_age:
+    path: classement/age
+    controller: App\Controllers\ClassementController::classementByAge
