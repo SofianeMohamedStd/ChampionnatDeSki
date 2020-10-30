@@ -48,21 +48,9 @@ class PassagesRepository extends AbstractModel implements PassageInterfaceReposi
         INNER JOIN participants
         ON passage.participants_id = participants.id
         ORDER BY moyenne ASC
-        LIMIT 3");
-        $req->execute();
-        return $req->fetchAll() ;
-    }
-    public function orderGeneral()
-    {
-        $req = $this->pdo->prepare("SELECT passage.id,passage.temps_passage_1, passage.temps_passage_2,
-        SEC_TO_TIME(passage.moyenne) as moyenne,participants.nom,participants.prenom
-        FROM passage
-        INNER JOIN participants
-        ON passage.participants_id = participants.id
-        ORDER BY moyenne ASC
         ");
         $req->execute();
-        return $req->fetchAll();
+        return $req->fetchAll() ;
     }
     public function firstorderByCategorie($id)
     {
@@ -72,18 +60,7 @@ class PassagesRepository extends AbstractModel implements PassageInterfaceReposi
         INNER JOIN participants 
         ON participants.id = passage.participants_id AND participants.categorie_id = ? 
         ORDER BY moyenne ASC 
-        LIMIT 3");
-        $req->execute(array($id));
-        return $req->fetchAll();
-    }
-    public function orderByCategorie($id)
-    {
-        $req = $this->pdo->prepare("SELECT passage.id,passage.temps_passage_1, passage.temps_passage_2,
-        SEC_TO_TIME(passage.moyenne) as moyenne,participants.nom,participants.prenom 
-        FROM passage 
-        INNER JOIN participants 
-        ON participants.id = passage.participants_id AND participants.categorie_id = ? 
-        ORDER BY moyenne ASC ");
+        ");
         $req->execute(array($id));
         return $req->fetchAll();
     }
@@ -108,6 +85,32 @@ class PassagesRepository extends AbstractModel implements PassageInterfaceReposi
         INNER JOIN participants ON participants.id = passage.participants_id 
         AND DATEDIFF( date(CURRENT_DATE), participants.date_de_naissance )/365.5 >= 30
         AND DATEDIFF( date(CURRENT_DATE), participants.date_de_naissance )/365.5 < 40
+        ORDER BY moyenne ASC 
+        LIMIT 3");
+        $req->execute();
+        return $req->fetchAll();
+    }
+    public function ordreByThirdInterval()
+    {
+        $req = $this->pdo->prepare("
+        SELECT passage.id,passage.temps_passage_1, passage.temps_passage_2, SEC_TO_TIME(passage.moyenne) as moyenne,
+        participants.nom,participants.prenom FROM passage 
+        INNER JOIN participants ON participants.id = passage.participants_id 
+        AND DATEDIFF( date(CURRENT_DATE), participants.date_de_naissance )/365.5 >= 40
+        AND DATEDIFF( date(CURRENT_DATE), participants.date_de_naissance )/365.5 < 50
+        ORDER BY moyenne ASC 
+        LIMIT 3");
+        $req->execute();
+        return $req->fetchAll();
+    }
+    public function ordreByFourthInterval()
+    {
+        $req = $this->pdo->prepare("
+        SELECT passage.id,passage.temps_passage_1, passage.temps_passage_2, SEC_TO_TIME(passage.moyenne) as moyenne,
+        participants.nom,participants.prenom FROM passage 
+        INNER JOIN participants ON participants.id = passage.participants_id 
+        AND DATEDIFF( date(CURRENT_DATE), participants.date_de_naissance )/365.5 >= 50
+        AND DATEDIFF( date(CURRENT_DATE), participants.date_de_naissance )/365.5 <= 60
         ORDER BY moyenne ASC 
         LIMIT 3");
         $req->execute();

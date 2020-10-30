@@ -92,10 +92,8 @@ class ClassementController extends AbstractController
     {
 
         $ClassementPremier = $this->Passage->firstorderGeneral();
-        $ClassementGeneral = $this->Passage->orderGeneral();
         try {
-            echo $this -> twig -> render('ClassementGeneralView.html.twig', ['ListPremiers' => $ClassementPremier,
-                'ListGeneral' => $ClassementGeneral]);
+            echo $this -> twig -> render('ClassementGeneralView.html.twig', ['ListPremiers' => $ClassementPremier]);
         } catch (LoaderError $e) {
         } catch (RuntimeError $e) {
         } catch (SyntaxError $e) {
@@ -107,11 +105,10 @@ class ClassementController extends AbstractController
         $IdCategorie = $request->get('categorie');
 
         $ClassementPremierCategorie = $this->Passage->firstorderByCategorie($IdCategorie);
-        $ClassementCategorie = $this->Passage->orderByCategorie($IdCategorie);
         try {
             echo $this -> twig -> render(
                 'ClassementByCategorieView.html.twig',
-                ['ListPremiers' => $ClassementPremierCategorie,'ListGeneral' => $ClassementCategorie]
+                ['ListPremiers' => $ClassementPremierCategorie]
             );
         } catch (LoaderError $e) {
         } catch (RuntimeError $e) {
@@ -131,6 +128,22 @@ class ClassementController extends AbstractController
                 );
         } elseif ($IdCategorie == 2) {
             $ClassementParAge = $this->Passage->ordreByAgeSecondeInterval();
+
+
+            echo $this -> twig -> render(
+                'ClassementByCategorieView.html.twig',
+                ['ListPremiers' => $ClassementParAge]
+            );
+        } elseif ($IdCategorie == 3) {
+            $ClassementParAge = $this->Passage->ordreByThirdInterval();
+
+
+            echo $this -> twig -> render(
+                'ClassementByCategorieView.html.twig',
+                ['ListPremiers' => $ClassementParAge]
+            );
+        } elseif ($IdCategorie == 4) {
+            $ClassementParAge = $this->Passage->ordreByFourthInterval();
 
 
             echo $this -> twig -> render(

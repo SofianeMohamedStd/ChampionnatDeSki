@@ -41,7 +41,9 @@
                                 <td>{{ categorie.NomCategorie }}</td>
                                 <td>
                                     <button type="button" class="btn btn-warning"><i class="far fa-eye">Modifier</i></button>
-                                    <button type="button" class="btn btn-danger"><i class="fas fa-edit">Supprimer</i></button>
+                                    <form method="post" action="http://localhost/www/ChampionnatDeSki/categorie/supp/{{ categorie.id}}" id="formAdd" class="">
+                                        <input type="submit" class="btn btn-success" value="Supprimer" />
+                                    </form>
                                 </td>
                             </tr>
                             </tbody>

@@ -10,13 +10,19 @@ category:
     controller: App\Controllers\CategoriesController::showCategorie
 category_add:
     path: /categorie/add
-    controller: App\Controllers\CategoriesController::categorieAdd   
+    controller: App\Controllers\CategoriesController::categorieAdd
+category_delete:
+    path: categorie/supp/{id}
+    controller: App\Controllers\CategoriesController::categorieDelete
 profil:
     path: /profil
     controller: App\Controllers\ProfilsController::showProfils
 profil_add:
     path: /profil/add
     controller: App\Controllers\ProfilsController::profilAdd
+profil_delete:
+    path: /profil/supp/{id}
+    controller: App\Controllers\ProfilsController::profilDelate
 epreuve:
     path: /epreuve
     controller: App\Controllers\EpreuvesController::showEpreuve

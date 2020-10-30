@@ -7,7 +7,7 @@
     <body>
     <div class="row mx-auto">
         <div class="col-8 offset-2">
-            <h1>Classement par categorie</h1>
+            <h1>Classement par Age</h1>
         </div>
     </div>
     {% if ListPremiers|length != 0 %}
@@ -18,7 +18,7 @@
                         <h1>Les Trois Premiers</h1>
                     </div>
                 </div>
-                {% for participant in ListPremiers %}
+                {% for participant in ListPremiers|slice(0, 3) %}
                 <div class="container">
                     <div class="row justify-content-around">
                         <div class="col-md-4">
@@ -55,7 +55,7 @@
                 <th scope="col">resultat final</th>
             </tr>
 
-            {% for participant in ListGeneral %}
+            {% for participant in ListPremiers %}
             <tbody>
             <tr>
                 <td>{{ participant.nom }}</td>

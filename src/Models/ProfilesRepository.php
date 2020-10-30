@@ -47,4 +47,10 @@ class ProfilesRepository extends AbstractModel implements ProfilsInterfaceReposi
 
         return ProfilsFactory::arrayDbCollection($req->fetchAll());
     }
+    public function delete(int $id): bool
+    {
+        $deleteProfile = $this->pdo->prepare('DELETE FROM profils WHERE id = :id');
+
+        return $deleteProfile->execute(array('id' => $id));
+    }
 }

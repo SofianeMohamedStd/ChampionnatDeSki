@@ -43,4 +43,13 @@ class CategoriesController extends AbstractController
         $response = new RedirectResponse('http://localhost/www/ChampionnatDeSki/categorie');
         $response->send();
     }
+    public function categorieDelete(Request $request): void
+    {
+        $params = explode('/', $request->getPathInfo());
+
+        $btsup = $params[3];
+        $this->Category->delete($btsup);
+        $response = new RedirectResponse('http://localhost/www/ChampionnatDeSki/categorie');
+        $response->send();
+    }
 }

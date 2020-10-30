@@ -47,4 +47,10 @@ class CategoriesRepository extends AbstractModel implements CategoriesInterfaceR
 
         return CategoriesFactory::arrayDbCollection($req->fetchAll());
     }
+    public function delete(int $id): bool
+    {
+        $deleteProfile = $this->pdo->prepare('DELETE FROM categories WHERE id = :id');
+
+        return $deleteProfile->execute(array('id' => $id));
+    }
 }

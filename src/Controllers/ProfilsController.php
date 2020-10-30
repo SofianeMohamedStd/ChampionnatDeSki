@@ -42,4 +42,14 @@ class ProfilsController extends AbstractController
         $response = new RedirectResponse('http://localhost/www/ChampionnatDeSki/profil');
         $response->send();
     }
+
+    public function profilDelate(Request $request): void
+    {
+        $params = explode('/', $request->getPathInfo());
+
+        $btsup = $params[3];
+        $this->Profil->delete($btsup);
+        $response = new RedirectResponse('http://localhost/www/ChampionnatDeSki/profil');
+        $response->send();
+    }
 }
