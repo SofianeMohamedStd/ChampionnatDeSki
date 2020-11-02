@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Entites\Categorie;
 use App\Models\CategoriesRepository;
+use Symfony\Component\HttpFoundation\Response;
 use Twig\Error\LoaderError;
 use Twig\Error\SyntaxError;
 use Twig\Error\RuntimeError;
@@ -24,7 +25,11 @@ class CategoriesController extends AbstractController
         $categories = $this->Category->findAll();
         var_dump($categories);
         try {
-            echo $this -> twig -> render('CategorieView.html.twig', ['Listecategories' => $categories]);
+            $response = new Response($this -> twig -> render(
+                'CategorieView.html.twig',
+                ['Listecategories' => $categories]
+            ));
+            $response->send();
         } catch (LoaderError $e) {
         } catch (RuntimeError $e) {
         } catch (SyntaxError $e) {

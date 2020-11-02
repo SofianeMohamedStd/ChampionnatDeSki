@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use Symfony\Component\HttpFoundation\Response;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
 use Twig\Error\SyntaxError;
@@ -16,6 +17,7 @@ final class HomeController extends AbstractController
      */
     public function homePage()
     {
-        echo $this->twig->render('HomeView.html.twig');
+        $response = new Response($this->twig->render('HomeView.html.twig'));
+        $response->send();
     }
 }

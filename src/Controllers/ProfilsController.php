@@ -6,6 +6,7 @@ use App\Entites\Profil;
 use App\Models\ProfilesRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Response;
 
 class ProfilsController extends AbstractController
 {
@@ -22,7 +23,9 @@ class ProfilsController extends AbstractController
         $profils = $this->Profil->findAll();
         var_dump($profils);
         try {
-            echo $this -> twig -> render('ProfilView.html.twig', ['Listeprofils' => $profils]);
+            $response = new Response( $this -> twig -> render('ProfilView.html.twig',
+                ['Listeprofils' => $profils]));
+            $response->send ();
         } catch (LoaderError $e) {
         } catch (RuntimeError $e) {
         } catch (SyntaxError $e) {

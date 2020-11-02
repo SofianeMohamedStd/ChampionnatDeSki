@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Serializer\Encoder\CsvEncoder;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\ArrayDenormalizer;
@@ -37,7 +38,8 @@ class ParticipantsController extends AbstractController
     public function participantPage()
     {
         try {
-            echo $this -> twig -> render('ParticipantView.html.twig');
+            $response = new Response( $this -> twig -> render('ParticipantView.html.twig'));
+            $response->send ();
         } catch (LoaderError $e) {
         } catch (RuntimeError $e) {
         } catch (SyntaxError $e) {
@@ -50,11 +52,12 @@ class ParticipantsController extends AbstractController
         $profils = $this->profil->findAll();
         $epreuve = $this->epreuve->findAll();
         try {
-            echo $this -> twig -> render(
+            $response = new Response( $this -> twig -> render(
                 'ParticipantAddView.html.twig',
                 ['ListeCategories' => $categories,'ListeProfils' => $profils,
                 'ListeEpreuves' => $epreuve]
-            );
+            ));
+            $response->send ();
         } catch (LoaderError $e) {
         } catch (RuntimeError $e) {
         } catch (SyntaxError $e) {
@@ -81,7 +84,9 @@ class ParticipantsController extends AbstractController
     {
         $participant = $this -> participant -> getAllParticipants();
         try {
-            echo $this -> twig -> render('ParticipantShowView.html.twig', ['Listeparticipants' => $participant]);
+            $response = new Response( $this -> twig -> render('ParticipantShowView.html.twig',
+                ['Listeparticipants' => $participant]));
+            $response->send ();
         } catch (LoaderError $e) {
         } catch (RuntimeError $e) {
         } catch (SyntaxError $e) {
@@ -105,6 +110,6 @@ class ParticipantsController extends AbstractController
         }
 
 
-        //return $result2;
+
     }
 }

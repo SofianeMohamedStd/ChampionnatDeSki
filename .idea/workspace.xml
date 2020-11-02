@@ -21,19 +21,11 @@
   <component name="ChangeListManager">
     <list default="true" id="88fbb36d-61f8-48bf-8eda-7a505acca904" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/CategoriesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/CategoriesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/ClassementController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ClassementController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/ProfilsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ProfilsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InterfaceRepository/PassageInterfaceRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/InterfaceRepository/PassageInterfaceRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/CategoriesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/CategoriesRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/PassagesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/PassagesRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/ProfilesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/ProfilesRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/CategorieView.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/CategorieView.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/ClassementByAgeView.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/ClassementByAgeView.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/ClassementByCategorieView.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/ClassementByCategorieView.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/ClassementGeneralView.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/ClassementGeneralView.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/ProfilView.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/ProfilView.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/EpreuvesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/EpreuvesRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/ListParticipantbyEpreuveView.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/ListParticipantbyEpreuveView.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +187,8 @@
       <workItem from="1603957828382" duration="11366000" />
       <workItem from="1603973809798" duration="3150000" />
       <workItem from="1603977488132" duration="8243000" />
-      <workItem from="1604042776529" duration="20615000" />
+      <workItem from="1604042776529" duration="21358000" />
+      <workItem from="1604303912681" duration="1855000" />
     </task>
     <servers />
   </component>
@@ -250,10 +243,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="498" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1603387236689" />
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603881622232">
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604305945770">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1603881622232" />
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1604305945770" />
     <state x="545" y="325" key="ComposerInitDialogKey" timestamp="1603275315909">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

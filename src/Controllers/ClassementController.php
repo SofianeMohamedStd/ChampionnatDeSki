@@ -6,6 +6,7 @@ use App\Entites\Passage;
 use App\Models\CategoriesRepository;
 use App\Models\PassagesRepository;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Serializer\Encoder\CsvEncoder;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\ArrayDenormalizer;
@@ -43,7 +44,9 @@ class ClassementController extends AbstractController
 
 
         try {
-            echo $this -> twig -> render('ClassementView.html.twig', ['ListeCategories' => $categories]);
+            $response = new Response( $this -> twig -> render('ClassementView.html.twig',
+                ['ListeCategories' => $categories]));
+            $response->send ();
         } catch (LoaderError $e) {
         } catch (RuntimeError $e) {
         } catch (SyntaxError $e) {
@@ -106,10 +109,11 @@ class ClassementController extends AbstractController
 
         $ClassementPremierCategorie = $this->Passage->firstorderByCategorie($IdCategorie);
         try {
-            echo $this -> twig -> render(
+            $response = new Response( $this -> twig -> render(
                 'ClassementByCategorieView.html.twig',
                 ['ListPremiers' => $ClassementPremierCategorie]
-            );
+            ));
+            $response->send ();
         } catch (LoaderError $e) {
         } catch (RuntimeError $e) {
         } catch (SyntaxError $e) {
@@ -122,34 +126,38 @@ class ClassementController extends AbstractController
         if ($IdCategorie == 1) {
             $ClassementParAge = $this->Passage->ordreByAgeFirstInterval();
 
-                echo $this -> twig -> render(
-                    'ClassementByCategorieView.html.twig',
-                    ['ListPremiers' => $ClassementParAge]
-                );
+            $response = new Response($this -> twig -> render(
+                'ClassementByCategorieView.html.twig',
+                ['ListPremiers' => $ClassementParAge]
+            ));
+            $response->send ();
         } elseif ($IdCategorie == 2) {
             $ClassementParAge = $this->Passage->ordreByAgeSecondeInterval();
 
 
-            echo $this -> twig -> render(
+            $response = new Response($this -> twig -> render(
                 'ClassementByCategorieView.html.twig',
                 ['ListPremiers' => $ClassementParAge]
-            );
+            ));
+            $response->send ();
         } elseif ($IdCategorie == 3) {
             $ClassementParAge = $this->Passage->ordreByThirdInterval();
 
 
-            echo $this -> twig -> render(
+            $response = new Response( $this -> twig -> render(
                 'ClassementByCategorieView.html.twig',
                 ['ListPremiers' => $ClassementParAge]
-            );
+            ));
+            $response->send ();
         } elseif ($IdCategorie == 4) {
             $ClassementParAge = $this->Passage->ordreByFourthInterval();
 
 
-            echo $this -> twig -> render(
+            $response = new Response( $this -> twig -> render(
                 'ClassementByCategorieView.html.twig',
                 ['ListPremiers' => $ClassementParAge]
-            );
+            ));
+            $response->send ();
         }
     }
 }

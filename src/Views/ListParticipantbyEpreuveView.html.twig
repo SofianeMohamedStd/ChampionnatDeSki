@@ -21,14 +21,17 @@
 
 
             </tr>
+            {% for epreuve in Listeepreuves|slice(0,1) %}
+                <div class="col-6 offset-3">
+                    <form action="http://localhost/www/ChampionnatDeSki/epreuve/export/{{ epreuve.epreuves_id}}" method="post"
+                          name="frmCSVImport" id="frmCSVImport" class="form-horizontal">
+                        <input type="submit" class="btn btn-success" value="Valider" />
+                    </form>
+                </div>
+            {% endfor %}
 
             {% for participant in Listeepreuves %}
-            <div class="col-6 offset-3">
-                <form action="http://localhost/www/ChampionnatDeSki/epreuve/export/{{ participant.epreuves_id}}" method="post"
-                      name="frmCSVImport" id="frmCSVImport" class="form-horizontal">
-                    <input type="submit" class="btn btn-success" value="Valider" />
-                </form>
-            </div>
+
             <tbody>
             <tr>
                 <th scope="row">{{ participant.participants_id }}</th>
