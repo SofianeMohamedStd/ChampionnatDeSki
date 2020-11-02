@@ -38,7 +38,7 @@ class Profil
      */
     public function setNomProfil(string $NomProfil)
     {
-        if (! preg_match(",^[a-zA-Z0-9[\].-:]+$,", $NomProfil)) {
+        if (! preg_match(",^[a-zA-Z0-9[\].-:\- ]+$,", $NomProfil)) {
             throw new Exception('verifier le nom');
         }
         $this->NomProfil = $NomProfil;

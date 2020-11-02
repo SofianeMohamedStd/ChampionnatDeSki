@@ -63,7 +63,7 @@ class Epreuve
      */
     public function setLieu(string $Lieu): self
     {
-        if (! preg_match("/^[a-z]* [0-9]{5}$/", $Lieu)) {
+        if (! preg_match("/^[a-zA-ZÀ-ÿ0-9 \(\).-]{1,20}$/", $Lieu)) {
             throw new Exception('Lieu invalide');
         } else {
             $this->Lieu = $Lieu;

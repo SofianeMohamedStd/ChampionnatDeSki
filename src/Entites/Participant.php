@@ -137,7 +137,7 @@ class Participant
      */
     public function setEmail(string $Email)
     {
-        if (! preg_match("/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/", $Email)) {
+        if (! preg_match("/^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/", $Email)) {
             throw new Exception('Email invalide');
         }
         $this->Email = $Email;

@@ -17,6 +17,7 @@
                 <th scope="col">prenom</th>
                 <th scope="col">categorie</th>
                 <th scope="col">profil</th>
+                <th scope="col">photo</th>
 
             </tr>
 
@@ -28,17 +29,14 @@
                 <td>{{ participant.prenom }}</td>
                 <td>{{ participant.categories }}</td>
                 <td>{{ participant.profils }}</td>
+                <td>
+                    <img class="picParticipant" src="http://localhost/www/ChampionnatDeSki/assets/imgProf/{{ participant.photo }}"  alt="Avatar" style="width: 100px">
+                </td>
             </tr>
             </tbody>
             {% endfor %}
             </thead>
         </table>
-    <div class="col-6 offset-3">
-        <form action="http://localhost/www/ChampionnatDeSki/participant/exportdata" method="post"
-              name="frmCSVImport" id="frmCSVImport" class="form-horizontal">
-            <input type="submit" class="btn btn-success" value="Valider" />
-        </form>
-    </div>
     <div class="col-6 offset-3">
         <form method="post" enctype="multipart/form-data" action="http://localhost/www/ChampionnatDeSki/participant/import">
             <div class="form-inline mt-2">
@@ -54,6 +52,10 @@
     </div>
 
     {% else %}
-        hi
+        <div class="col-8 offset-2">
+            <h1>Aucun participant disponible</h1>
+            <p>ajouter un participant</p>
+            <a class="btn btn-outline-secondary" href="http://localhost/www/ChampionnatDeSki/participant/addpage" role="button">Ajouter</a>
+        </div>
     {% endif %}
 {% endblock %}

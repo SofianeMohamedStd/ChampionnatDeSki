@@ -125,7 +125,6 @@ class ParticipantsController extends AbstractController
 
         $btsup = $params[3];
         $btsup1 = $params[4];
-        var_dump($btsup);
         $this->participant->delete($btsup);
         $this->participant->deletefromParticipant($btsup1, $btsup);
         $response = new RedirectResponse('http://localhost/www/ChampionnatDeSki/epreuve');

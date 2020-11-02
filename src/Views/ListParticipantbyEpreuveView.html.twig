@@ -18,6 +18,7 @@
                 <th scope="col">categorie</th>
                 <th scope="col">profil</th>
                 <th scope="col">epreuve</th>
+                <th scop="col">photo</th>
 
 
             </tr>
@@ -25,7 +26,7 @@
                 <div class="col-6 offset-3">
                     <form action="http://localhost/www/ChampionnatDeSki/epreuve/export/{{ epreuve.epreuves_id}}" method="post"
                           name="frmCSVImport" id="frmCSVImport" class="form-horizontal">
-                        <input type="submit" class="btn btn-success" value="Valider" />
+                        <input type="submit" class="btn btn-success" value="Importer" />
                     </form>
                 </div>
             {% endfor %}
@@ -40,6 +41,9 @@
                 <td>{{ participant.nom_categorie }}</td>
                 <td>{{ participant.nom_profil }}</td>
                 <td>{{ participant.epreuves_id }}</td>
+                <td>
+                    <img class="picParticipant" src="http://localhost/www/ChampionnatDeSki/assets/imgProf/{{ participant.photo }}"  alt="Avatar" style="width: 100px">
+                </td>
                 <td>
                     <a class="nav-link" href="http://localhost/www/ChampionnatDeSki/participant/supp/{{ participant.id }}/{{ participant.epreuves_id }}">
                         <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

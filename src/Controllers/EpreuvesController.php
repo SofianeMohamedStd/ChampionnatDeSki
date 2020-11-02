@@ -58,7 +58,6 @@ class EpreuvesController extends AbstractController
         $params = explode('/', $request->getPathInfo());
 
         $listbyEpreuve = $this->Epreuves->findparticipantbyEpreuve($params[2]);
-        var_dump($listbyEpreuve);
         try {
             echo $this -> twig -> render(
                 'ListParticipantbyEpreuveView.html.twig',
