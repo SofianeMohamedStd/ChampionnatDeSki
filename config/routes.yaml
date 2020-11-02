@@ -44,6 +44,9 @@ participant_addPage:
 participant_add:
     path: /participant/add
     controller: App\Controllers\ParticipantsController::participantAdd
+participant_supp:
+    path: participant/supp/{id}/{idd}
+    controller: App\Controllers\ParticipantsController::deleteParticipant
 participant_show:
     path: /participant/participantshow
     controller: App\Controllers\ParticipantsController::showParticipant

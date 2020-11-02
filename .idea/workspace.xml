@@ -20,17 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88fbb36d-61f8-48bf-8eda-7a505acca904" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/imgProf/participant.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/CategoriesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/CategoriesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/ClassementController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ClassementController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/EpreuvesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/EpreuvesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/ParticipantsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ParticipantsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/ProfilsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ProfilsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/EpreuvesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/EpreuvesRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/CategorieView.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/CategorieView.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/EpreuveView.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/EpreuveView.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/HomeView.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/HomeView.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/ProfilView.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/ProfilView.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/ParticipantsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/ParticipantsRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/ListParticipantbyEpreuveView.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/ListParticipantbyEpreuveView.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,6 +189,7 @@
       <workItem from="1603977488132" duration="8243000" />
       <workItem from="1604042776529" duration="21358000" />
       <workItem from="1604303912681" duration="6133000" />
+      <workItem from="1604319099751" duration="4153000" />
     </task>
     <servers />
   </component>
@@ -248,10 +244,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="498" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1603387236689" />
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604305945770">
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604320071010">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1604305945770" />
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1604320071010" />
     <state x="545" y="325" key="ComposerInitDialogKey" timestamp="1603275315909">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

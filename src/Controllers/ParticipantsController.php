@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Serializer\Encoder\CsvEncoder;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
@@ -74,10 +75,17 @@ class ParticipantsController extends AbstractController
         $newparticipant->setEmail($request->get('email'));
         $newparticipant->setCategorieID($request->get('categorie'));
         $newparticipant->setProfilID($request->get('profil'));
-        $newparticipant->setPhoto($request->get('photo'));
+        if ($request->get('photo') == '') {
+            $newparticipant->setPhoto('participant.png');
+        } else {
+            $newparticipant->setPhoto($request->get('photo'));
+        }
         $newparticipant->setEpreuveID($request->get('epreuve'));
 
         $this->participant->addParticipant($newparticipant);
+
+        $response = new RedirectResponse('http://localhost/www/ChampionnatDeSki/participant/addpage');
+        $response->send();
     }
 
     public function showParticipant()
@@ -110,5 +118,17 @@ class ParticipantsController extends AbstractController
         foreach ($result2 as $result) {
             $this->participant->addParticipant($result);
         }
+    }
+    public function deleteParticipant(Request $request)
+    {
+        $params = explode('/', $request->getPathInfo());
+
+        $btsup = $params[3];
+        $btsup1 = $params[4];
+        var_dump($btsup);
+        $this->participant->delete($btsup);
+        $this->participant->deletefromParticipant($btsup1, $btsup);
+        $response = new RedirectResponse('http://localhost/www/ChampionnatDeSki/epreuve');
+        $response->send();
     }
 }

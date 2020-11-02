@@ -71,7 +71,7 @@ class ParticipantsRepository extends AbstractModel implements ParticipantsInterf
    
     public function getAllParticipants(): array
     {
-        $req = $this->pdo->prepare('SELECT participants.*, categories.nom_categorie,profils.nom_profil 
+        $req = $this->pdo->prepare('SELECT participants.*, categories.nom_categorie,profils.nom_profil
         FROM participants
         INNER JOIN categories
         ON participants.categorie_id = categories.id
@@ -96,5 +96,15 @@ class ParticipantsRepository extends AbstractModel implements ParticipantsInterf
             'id' => $participant->getId()
         ));
         return $req->fetchAll();
+    }
+    public function delete($id)
+    {
+        $req = $this->pdo->prepare('DELETE FROM epreuves_participants WHERE participants_id = ?;');
+        $req->execute(array($id));
+    }
+    public function deletefromParticipant($ide,$id)
+    {
+        $req = $this->pdo->prepare('DELETE FROM participants WHERE epreuves_id = ? AND participants_id = $id;');
+        $req->execute(array($ide, $id));
     }
 }
