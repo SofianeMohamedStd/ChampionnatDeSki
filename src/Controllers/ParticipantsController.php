@@ -38,8 +38,8 @@ class ParticipantsController extends AbstractController
     public function participantPage()
     {
         try {
-            $response = new Response( $this -> twig -> render('ParticipantView.html.twig'));
-            $response->send ();
+            $response = new Response($this -> twig -> render('ParticipantView.html.twig'));
+            $response->send();
         } catch (LoaderError $e) {
         } catch (RuntimeError $e) {
         } catch (SyntaxError $e) {
@@ -52,12 +52,12 @@ class ParticipantsController extends AbstractController
         $profils = $this->profil->findAll();
         $epreuve = $this->epreuve->findAll();
         try {
-            $response = new Response( $this -> twig -> render(
+            $response = new Response($this -> twig -> render(
                 'ParticipantAddView.html.twig',
                 ['ListeCategories' => $categories,'ListeProfils' => $profils,
                 'ListeEpreuves' => $epreuve]
             ));
-            $response->send ();
+            $response->send();
         } catch (LoaderError $e) {
         } catch (RuntimeError $e) {
         } catch (SyntaxError $e) {
@@ -84,9 +84,11 @@ class ParticipantsController extends AbstractController
     {
         $participant = $this -> participant -> getAllParticipants();
         try {
-            $response = new Response( $this -> twig -> render('ParticipantShowView.html.twig',
-                ['Listeparticipants' => $participant]));
-            $response->send ();
+            $response = new Response($this -> twig -> render(
+                'ParticipantShowView.html.twig',
+                ['Listeparticipants' => $participant]
+            ));
+            $response->send();
         } catch (LoaderError $e) {
         } catch (RuntimeError $e) {
         } catch (SyntaxError $e) {
@@ -101,15 +103,12 @@ class ParticipantsController extends AbstractController
         $serializer = new Serializer($normalizers, $encoders);
 
         $data2 =  file_get_contents($data);
-        var_dump($data2);
+
 
         $result2 = $serializer->deserialize($data2, 'App\Entites\Participant[]', 'csv');
-        var_dump($result2);
+
         foreach ($result2 as $result) {
             $this->participant->addParticipant($result);
         }
-
-
-
     }
 }

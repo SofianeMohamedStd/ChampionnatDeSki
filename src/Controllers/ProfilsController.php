@@ -21,11 +21,13 @@ class ProfilsController extends AbstractController
     public function showProfils(): void
     {
         $profils = $this->Profil->findAll();
-        var_dump($profils);
+
         try {
-            $response = new Response( $this -> twig -> render('ProfilView.html.twig',
-                ['Listeprofils' => $profils]));
-            $response->send ();
+            $response = new Response($this -> twig -> render(
+                'ProfilView.html.twig',
+                ['Listeprofils' => $profils]
+            ));
+            $response->send();
         } catch (LoaderError $e) {
         } catch (RuntimeError $e) {
         } catch (SyntaxError $e) {

@@ -23,9 +23,14 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/CategoriesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/CategoriesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/ClassementController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ClassementController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/EpreuvesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/EpreuvesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/ParticipantsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ParticipantsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/ProfilsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ProfilsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Models/EpreuvesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/EpreuvesRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/ListParticipantbyEpreuveView.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/ListParticipantbyEpreuveView.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/CategorieView.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/CategorieView.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/EpreuveView.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/EpreuveView.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/HomeView.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/HomeView.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/ProfilView.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/ProfilView.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +193,7 @@
       <workItem from="1603973809798" duration="3150000" />
       <workItem from="1603977488132" duration="8243000" />
       <workItem from="1604042776529" duration="21358000" />
-      <workItem from="1604303912681" duration="1855000" />
+      <workItem from="1604303912681" duration="6133000" />
     </task>
     <servers />
   </component>

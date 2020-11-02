@@ -30,7 +30,6 @@ class EpreuvesController extends AbstractController
     public function showEpreuve(): void
     {
         $epreuve = $this->Epreuves->findAll();
-        var_dump($epreuve);
 
         try {
             echo $this -> twig -> render('EpreuveView.html.twig', ['Listeepreuves' => $epreuve]);
@@ -57,7 +56,7 @@ class EpreuvesController extends AbstractController
     public function listParticipantEpreuve(Request $request)
     {
         $params = explode('/', $request->getPathInfo());
-        var_dump($params);
+
         $listbyEpreuve = $this->Epreuves->findparticipantbyEpreuve($params[2]);
         var_dump($listbyEpreuve);
         try {

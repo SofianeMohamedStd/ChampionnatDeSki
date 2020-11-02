@@ -23,7 +23,6 @@ class CategoriesController extends AbstractController
     public function showCategorie(): void
     {
         $categories = $this->Category->findAll();
-        var_dump($categories);
         try {
             $response = new Response($this -> twig -> render(
                 'CategorieView.html.twig',

@@ -7,7 +7,7 @@
     <body>
     <div class="row mx-auto">
     <div class="col-8 offset-2">
-        <h1>Classement</h1>
+        <h1>Importer vos Resultats</h1>
     </div>
         <div class="col-6 offset-3">
             <form method="post" enctype="multipart/form-data" action="http://localhost/www/ChampionnatDeSki/importparticipant">
@@ -25,8 +25,10 @@
     </div>
     <section class="jumbotron text-center mt-5">
         <div class="album py-4 bg-light">
+            <div class="col-8 offset-2">
+                <h1>Classement</h1>
+            </div>
             <div class="container mt-5">
-
                 <div class="row justify-content-around">
                     <div class="col-md-4 ">
                         <div class="flip-card">
@@ -57,7 +59,7 @@
                                         <form method="post" action="http://localhost/www/ChampionnatDeSki/classement/categorie" id="formAdd" class="">
                                         <div class="row justify-content-center">
                                     <select class="browser-default custom-select" name="categorie" id="categorie">
-                                        <option selected>Selctionne Une categorie</option>
+                                        <option selected>Sélectionner Une categorie</option>
                                         {% for categorie in ListeCategories %}
                                             {% set selected = '' %}
                                             {% if (categorie.id ~ ' ' ~ categorie.NomCategorie) == user.ListeCategories %}
@@ -88,7 +90,7 @@
                                         <form method="post" action="http://localhost/www/ChampionnatDeSki/classement/age" id="formAdd" class="">
                                             <div class="row justify-content-center">
                                     <select class="browser-default custom-select" name="age" id="age">
-                                        <option selected>Selctionne un intervalle d'age</option>
+                                        <option selected>sélectionner un intervalle d'age</option>
                                         <option value="1">[18...30[</option>
                                         <option value="2">[30...40[</option>
                                         <option value="3">[40...50[</option>
