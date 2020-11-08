@@ -116,4 +116,9 @@ class PassagesRepository extends AbstractModel implements PassageInterfaceReposi
         $req->execute();
         return $req->fetchAll();
     }
+    public function delete()
+    {
+        $req = $this->pdo->prepare ('DELETE * FROM passage');
+        $req->execute ();
+    }
 }

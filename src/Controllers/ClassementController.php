@@ -58,17 +58,18 @@ class ClassementController extends AbstractController
     {
 
         $data = $request->files->get('file');
+        var_dump($data);
            $encoders = [new CsvEncoder(), new JsonEncoder()];
            $normalizers = [new ObjectNormalizer(), new ArrayDenormalizer()];
            $serializer = new Serializer($normalizers, $encoders);
 
            $data2 =  file_get_contents($data);
-
+        var_dump($data2);
 
         $ObjectResult = $serializer->deserialize($data2, 'App\Entites\Passage[]', 'csv');
 
-
-
+        var_dump($ObjectResult);
+        $this->Passage->delete ();
         foreach ($ObjectResult as $reslut) {
             $this->Passage->addListePassage($reslut);
         }

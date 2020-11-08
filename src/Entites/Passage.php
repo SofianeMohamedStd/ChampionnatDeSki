@@ -9,7 +9,7 @@ class Passage
 {
     private int $id;
 
-    private int $idParticipant;
+    private int $idP;
 
     private $time1;
 
@@ -31,12 +31,12 @@ class Passage
 
     public function getidParticipant(): ?int
     {
-        return $this->idParticipant;
+        return $this->idP;
     }
 
     public function setidParticipant($id): self
     {
-        $this->idParticipant = $id;
+        $this->idP = $id;
         return $this;
     }
 
@@ -67,7 +67,7 @@ class Passage
     public function buildFromTablePassage(array $Datapassage): self
     {
         $this->id = $Datapassage['id'];
-        $this->idParticipant = $Datapassage['participants_id'];
+        $this->idP = $Datapassage['participants_id'];
         $this->time1 =  $Datapassage['temps_passage_1'];
         $this->time2 =  $Datapassage['temps_passage_2'];
 
